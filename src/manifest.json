@@ -1,0 +1,29 @@
+{
+   "manifest_version": 2,
+   "name": "ASCII Patterns",
+   "version": "0.0.2",
+
+   "description": "Replace new tab page with generated ASCII text patterns",
+   "icons": {
+      "128": "icon-128.png",
+      "48": "icon-48.png",
+      "16": "icon-16.png"
+   },
+
+   "author": "Ken Frederick",
+
+   "background": {
+      "persistent": false,
+      "page": "background.html"
+   },
+
+   "chrome_url_overrides": {
+      "newtab": "newtab.html"
+   },
+   "content_security_policy": "script-src 'self'; 'unsafe-eval'; object-src 'self';",
+   "offline_enabled": true,
+   "permissions": [
+      "storage",
+      "tabs"
+   ]
+}
