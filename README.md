@@ -1,14 +1,14 @@
-ASCII Patterns
+Unicode Patterns
 ==============
 
-Replace new tab page generated ASCII text patterns
+Replace new tab page generated Unicode text patterns
 
 
 
 Installation
 -------------
 
-In Chrome, choose Window > Extensions.  Drag ```ascii-patterns.crx``` into the page that appears.
+In Chrome, choose Window > Extensions.  Drag ```unicode-patterns.crx``` into the page that appears.
 
 Or, you can also simply load the uncompiled source as follows:
 
