@@ -13,7 +13,7 @@
         "description": ""
     },
     "extPrefMono": {
-        "message": "Einfarbige Paletten",
+        "message": "Monochromatische Farben",
         "description": "Preference: monochrome colors"
     },
     "extPrefCustom": {
@@ -22,7 +22,7 @@
     },
     "extPrefAdd": {
         "message": "Hinzufügen",
-        "description": "Preference: add custom pattern scheme to database"
+        "description": "Preference: add"
     },
     "extPrefRefresh": {
         "message": "Muster Aktualisieren",

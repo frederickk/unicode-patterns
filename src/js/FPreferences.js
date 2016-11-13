@@ -34,9 +34,13 @@ class FPreferences {
                     ? ele.checked
                     : ele.value;
                 this.save();
+                event.stopPropagation();
             }
             this.selectors[val].addEventListener('change', inputHandler);
             this.selectors[val].addEventListener('input', inputHandler);
+            this.selectors[val].addEventListener('click', event => {
+                event.stopPropagation();
+            });
 
             // 2.
             // set defaults

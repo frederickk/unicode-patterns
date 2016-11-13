@@ -47,6 +47,9 @@ document.getElementById('preferences-return').addEventListener('click', function
     bs.css.removeClass(containerPreferences, 'bs-invisible');
 });
 
-document.getElementById('close').addEventListener('click', function(event) {
+// ------------------------------------------------------------------------
+function closeHandler(event) {
     bs.css.addClass(containerPreferences, 'bs-invisible');
-});
+}
+document.getElementById('close').addEventListener('click', closeHandler);
+containerPreferences.addEventListener('click', closeHandler);

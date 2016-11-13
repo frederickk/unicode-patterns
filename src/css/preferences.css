@@ -26,10 +26,11 @@
 .preferences #close {
     position: absolute;
     top: 6px;
-    right: 0;
+    right: 6px;
     height: 48px;
     width: 48px;
     color: #fff;
+    font-size: 48px;
 
     cursor: pointer;
 }
