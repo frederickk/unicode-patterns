@@ -4,7 +4,7 @@
         "description": "Extension name"
     },
     "extDesc": {
-        "message": "Replace new tab page with generated Unicode text patterns",
+        "message": "Replace new tab page with generated Unicode text patterns.",
         "description": "Extension description"
     },
 
