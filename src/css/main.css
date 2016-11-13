@@ -1,5 +1,5 @@
 /*
- * ascii-patterns
+ * unicode-patterns
  * main.css
  *
  * Ken Frederick
@@ -15,6 +15,7 @@
 /*@import url('https://fonts.googleapis.com/css?family=Space+Mono');*/
 /*@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');*/
 @import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 
 /*
@@ -33,6 +34,12 @@ html {
     font-family: 'Anonymous Pro', monospace;
     /*font-family: 'Space Mono', monospace;*/
     /*font-family: 'Roboto Mono', monospace;*/
+}
+
+sub {
+    padding-top: 0.25rem;
+    display: block;
+    font-size: 0.25rem;
 }
 
 
@@ -94,11 +101,13 @@ html {
  * Bookmarks Bar
  *
  */
-#app-svg-color {
+#app-svg-color,
+#preferences-svg-color {
     width: 22px;
     height: 22px;
 }
-#app-svg-color {
+#app-svg-color,
+#preferences-svg-color {
     fill: #000;
 }
 
@@ -118,7 +127,7 @@ html {
     position: relative;
     top: 9px;
     left: 8px;
-    width: 64px;
+    min-width: 64px;
     height: 22px;
     margin: 0 9px 0 0;
 
@@ -134,13 +143,20 @@ html {
     transition: all 100ms ease-in-out;
     -webkit-transition: all 100ms ease-in-out;
 }
-.bookmarks-bar #app-return * {
+.bookmarks-bar #app-return *,
+.bookmarks-bar #preferences-return * {
     cursor: pointer;
 }
-.bookmarks-bar #app-return {
+.bookmarks-bar #app-return,
+.bookmarks-bar #preferences-return {
     opacity: 0.0;
 }
-.bookmarks-bar #app-return:hover {
+.bookmarks-bar #preferences-return {
+    width: 100px;
+}
+
+.bookmarks-bar #app-return:hover,
+.bookmarks-bar #preferences-return:hover {
     opacity: 1.0;
 }
 

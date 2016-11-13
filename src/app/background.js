@@ -1,7 +1,7 @@
-console.log('Initialize ascii-patterns');
+console.log('Initialize unicode-patterns');
 
 /**!
- * ascii-patterns
+ * unicode-patterns
  * background.js
  *
  * Ken Frederick
