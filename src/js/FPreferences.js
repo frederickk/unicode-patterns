@@ -11,6 +11,7 @@
  *
  *
  * Class for handling preference within a Chrome Extension
+ * https://gist.github.com/frederickk/1abc7b58a09522c117c2e5633515aae9
  *
  */
 
