@@ -228,7 +228,7 @@ window.addEventListener('mousemove', function(event) {
         window.clearTimeout(mouseMoveTimeout);
     }
     else {
-        app.style.opacity = pref.style.opacity = 0.1;
+        app.style.opacity = pref.style.opacity = 0.3;
 
         if (mouseMoveTimeout !== undefined) {
             window.clearTimeout(mouseMoveTimeout);
