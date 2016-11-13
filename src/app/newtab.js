@@ -225,6 +225,7 @@ window.addEventListener('mousemove', function(event) {
 
     if (app.dataset.hover === 'true' || pref.dataset.hover === 'true') {
         app.style = pref.style = '';
+        window.clearTimeout(mouseMoveTimeout);
     }
     else {
         app.style.opacity = pref.style.opacity = 0.1;
@@ -241,16 +242,18 @@ window.addEventListener('mousemove', function(event) {
 // ------------------------------------------------------------------------
 // TODO: feels a bit bootleg and functionality is a bit janky
 function mouseOverHandler(event) {
-    event.preventDefault();
     this.dataset.hover = 'true';
+    event.preventDefault();
+    event.stopPropagation();
 }
 document.getElementById('app-return').addEventListener('mouseover', mouseOverHandler);
 document.getElementById('preferences-return').addEventListener('mouseover', mouseOverHandler);
 
 // ------------------------------------------------------------------------
 function mouseOutHandler(event) {
-    event.preventDefault();
     this.dataset.hover = null;
+    event.preventDefault();
+    event.stopPropagation();
 }
 document.getElementById('app-return').addEventListener('mouseout', mouseOutHandler);
 document.getElementById('preferences-return').addEventListener('mouseout', mouseOutHandler);
