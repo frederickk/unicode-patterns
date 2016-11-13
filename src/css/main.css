@@ -127,7 +127,7 @@ sub {
     position: relative;
     top: 9px;
     left: 8px;
-    min-width: 64px;
+    /*min-width: 64px;*/
     height: 22px;
     margin: 0 9px 0 0;
 
@@ -151,9 +151,6 @@ sub {
 .bookmarks-bar #preferences-return {
     opacity: 0.0;
 }
-.bookmarks-bar #preferences-return {
-    min-width: 10%;
-}
 
 .bookmarks-bar #app-return:hover,
 .bookmarks-bar #preferences-return:hover {
@@ -165,7 +162,9 @@ sub {
     top: 0;
     left: 4px;
     height: 22px;
-    padding: 0 0 0 5px;
+    padding: 0;
+    margin-right: 9px;
+    display: inline-block;
     font-family: sans-serif;
     font-size: 11.5px;
     font-weight: bold;

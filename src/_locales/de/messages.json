@@ -25,11 +25,11 @@
         "description": "Preference: add custom pattern scheme to database"
     },
     "extPrefRefresh": {
-        "message": "Aktualisieren",
+        "message": "Muster Aktualisieren",
         "description": "Preference: refresh pattern"
     },
     "extPrefRefreshTiming": {
-        "message": "Aktualisierungsrate",
+        "message": "Muster Aktualisierungsrate",
         "description": "Preference: refresh timing for patterns"
     },
     "extPrefRefreshTimingUnit": {
