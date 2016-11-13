@@ -23,6 +23,7 @@ const container = document.getElementById('pattern-container');
 const inputColors = document.querySelectorAll('input[type="color"]');
 
 let refreshTiming;
+let mouseMoveTimeout;
 
 
 
@@ -150,10 +151,11 @@ function getRandomColor() {
     let isMonochrome = preferences.get('isMonochrome');
     if (isMonochrome) {
         let col = palette[parseInt(Math.random() * palette.length)];
-        palette = [
+        palette = shuffleNodeList([
+            getColorContrast(col),
+            getColorShade(col, 0.5),
             col,
-            getColorShade(col, 0.6)
-        ];
+        ]);
     }
 
     inputColors.forEach((col, index) => {
@@ -170,9 +172,22 @@ function shuffleNodeList(list) {
     return arr;
 }
 
+
+function getColorContrast(hex) {
+    // hex = hex.replace('#', '');
+    let R = parseInt(hex.substr(1, 2), 16);
+    let G = parseInt(hex.substr(2, 2), 16);
+    let B = parseInt(hex.substr(4, 2), 16);
+    let brightness = ((R * 299) + (G * 587) + (B * 114)) / 1000;
+
+    return (brightness >= 162)
+        ? '#000000'
+        : '#ffffff';
+}
+
 // http://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
-function getColorShade(color, percent) {
-    var f = parseInt(color.slice(1), 16);
+function getColorShade(hex, percent) {
+    let f = parseInt(hex.slice(1), 16);
     let t = percent < 0
         ? 0
         : 255;
@@ -181,7 +196,7 @@ function getColorShade(color, percent) {
         : percent;
 
     let R = f >> 16;
-    let G = f >> 8&0x00FF;
+    let G = f >> 8 & 0x00FF;
     let B = f & 0x0000FF;
 
     return `#${(0x1000000+(Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1)}`;
@@ -201,3 +216,40 @@ document.getElementById('app-return').addEventListener('click', function(event) 
         url:'chrome://apps'
     });
 });
+
+// ------------------------------------------------------------------------
+window.addEventListener('mousemove', function(event) {
+    const app = document.getElementById('app-return');
+    const pref = document.getElementById('preferences-return');
+
+    if (app.dataset.hover === 'true' || pref.dataset.hover === 'true') {
+        app.style = pref.style = '';
+    }
+    else {
+        app.style.opacity = pref.style.opacity = 0.1;
+
+        if (mouseMoveTimeout !== undefined) {
+            window.clearTimeout(mouseMoveTimeout);
+        }
+        mouseMoveTimeout = window.setTimeout(function() {
+            app.style.opacity = pref.style.opacity = 0.0;
+        }, 200);
+    }
+});
+
+// ------------------------------------------------------------------------
+// TODO: feels a bit bootleg and functionality is a bit janky
+function mouseOverHandler(event) {
+    event.preventDefault();
+    this.dataset.hover = 'true';
+}
+document.getElementById('app-return').addEventListener('mouseover', mouseOverHandler);
+document.getElementById('preferences-return').addEventListener('mouseover', mouseOverHandler);
+
+// ------------------------------------------------------------------------
+function mouseOutHandler(event) {
+    event.preventDefault();
+    this.dataset.hover = null;
+}
+document.getElementById('app-return').addEventListener('mouseout', mouseOutHandler);
+document.getElementById('preferences-return').addEventListener('mouseout', mouseOutHandler);

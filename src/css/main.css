@@ -140,8 +140,8 @@ sub {
     border: rgba(230, 230, 230, 0.9) 1px solid;
     border-radius: 3px;
 
-    transition: all 100ms ease-in-out;
-    -webkit-transition: all 100ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
 }
 .bookmarks-bar #app-return *,
 .bookmarks-bar #preferences-return * {
