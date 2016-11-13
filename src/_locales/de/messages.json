@@ -6,5 +6,34 @@
     "extDesc": {
         "message": "Replace new tab page with generated Unicode text patterns",
         "description": "Extension description"
+    },
+
+    "extPref": {
+        "message": "Einstellungen",
+        "description": ""
+    },
+    "extPrefMono": {
+        "message": "Einfarbige Paletten",
+        "description": "Preference: monochrome colors"
+    },
+    "extPrefCustom": {
+        "message": "Muster Schema",
+        "description": "Preference: custom pattern scheme"
+    },
+    "extPrefAdd": {
+        "message": "Hinzufügen",
+        "description": "Preference: add custom pattern scheme to database"
+    },
+    "extPrefRefresh": {
+        "message": "Aktualisieren",
+        "description": "Preference: refresh pattern"
+    },
+    "extPrefRefreshTiming": {
+        "message": "Aktualisierungsrate",
+        "description": "Preference: refresh timing for patterns"
+    },
+    "extPrefRefreshTimingUnit": {
+        "message": "Sekunden",
+        "description": "Preference: refresh delay time unit"
     }
 }

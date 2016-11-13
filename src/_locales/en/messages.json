@@ -8,8 +8,12 @@
         "description": "Extension description"
     },
 
+    "extPref": {
+        "message": "Preferences",
+        "description": ""
+    },
     "extPrefMono": {
-        "message": "Monochrome",
+        "message": "Monochrome palettes",
         "description": "Preference: monochrome colors"
     },
     "extPrefCustom": {
@@ -19,5 +23,17 @@
     "extPrefAdd": {
         "message": "Add",
         "description": "Preference: add custom pattern scheme to database"
+    },
+    "extPrefRefresh": {
+        "message": "Auto refresh",
+        "description": "Preference: refresh pattern"
+    },
+    "extPrefRefreshTiming": {
+        "message": "Refresh delay",
+        "description": "Preference: refresh timing for patterns"
+    },
+    "extPrefRefreshTimingUnit": {
+        "message": "seconds",
+        "description": "Preference: refresh delay time unit"
     }
 }

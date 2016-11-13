@@ -152,7 +152,7 @@ sub {
     opacity: 0.0;
 }
 .bookmarks-bar #preferences-return {
-    width: 100px;
+    min-width: 10%;
 }
 
 .bookmarks-bar #app-return:hover,
