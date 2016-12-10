@@ -44,11 +44,6 @@ let preferences;
        option.text = patterns[p].scheme.replace(/ /g, '\xA0');
        select.appendChild(option);
    }
-
-   console.log(document.getElementById('patternsList').options[0]);
-   console.log(document.getElementById('patternsList').options.length);
-
-
 })();
 
 

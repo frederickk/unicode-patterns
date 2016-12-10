@@ -18,7 +18,7 @@
 
 class FPreferences {
     constructor(ids) {
-        console.log('FPreferences', 'init');
+        console.log('FPreferences', 'init', ids);
 
         this.selectors = {};
         this.defaults = {};
@@ -30,6 +30,7 @@ class FPreferences {
             this.selectors[val] = document.getElementById(val);
 
             let inputHandler = (event) => {
+                console.log('inputHandler');
                 let ele = event.srcElement;
                 this.storage[ele.id] = (ele.type === 'checkbox')
                     ? ele.checked
