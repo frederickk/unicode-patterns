@@ -11,6 +11,7 @@
  *
  */
 
+
 #preferences,
 .preferences {
     position: absolute;
@@ -40,15 +41,25 @@
     top: 0;
     left: 0;
     width: 68vw;
-    /*height: inherit;*/
     padding: 16vw;
 
     background-color: transparent;
+
+    font-size: 0.45rem;
+    line-height: 0.5rem;
 }
 
+
+
+/*
+ *
+ * Form Elements
+ *
+ */
 .preferences .input,
-.preferences .checkbox {
-    width: 1rem;
+.preferences .checkbox,
+.preferences .list,
+.preferences .button {
     height: 1rem;
     padding: 0;
     margin: 0 0 9px 0;
@@ -57,25 +68,101 @@
     overflow: hidden;
     display: inline-block;
 
+    white-space: pre;
     text-align: center;
     background-color: #fff;
+
+    cursor: pointer;
 
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
 }
+.preferences .input,
+.preferences .checkbox,
+.preferences .button {
+    width: 1rem;
+}
+.preferences .button {
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    line-height: 0;
+}
+.preferences .list {
+    width: calc(100% - 0.5rem);
+    margin-bottom: 0.25rem;
+    padding-left: 0.25rem;
 
-.preferences .checkbox:checked {
-    background: #000;
-    background: -webkit-radial-gradient(center, ellipse cover, #000000 50%,#ffffff 54%,#ffffff 100%);
-    background: radial-gradient(ellipse at center, #000000 50%,#ffffff 54%,#ffffff 100%);
+    border: rgba(0, 0, 0, 0.15) 1px solid;
+
+    letter-spacing: 0.6vw;
+    text-align: left;
+
+    /* dropdown arrow */
+    background-image: linear-gradient(45deg, transparent 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(135deg, rgba(0, 0, 0, 0.15) 50%, transparent 50%);
+    background-size: 0.25rem 0.25rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.75rem) 50%, calc(100% - 0.515rem) 50%, 100% 0;
 }
 
+
+/* :after */
+.preferences .button.plus::after {
+    content: '+';
+}
+.preferences .button.minus::after {
+    content: '–';
+}
+
+/* checked */
+.preferences .checkbox:checked {
+    background: #000;
+    background: -webkit-radial-gradient(center, ellipse cover, #000 50%, #fff 54%, #fff 100%);
+    background: radial-gradient(ellipse at center, #000 50%, #fff 54%, #fff 100%);
+}
+
+/* hover */
+.preferences .button:hover {
+    color: #fff;
+    background-color: #000;
+}
+.preferences .list:hover {
+    background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
+    background-size: 0.25rem 0.25rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.75rem) 50%, calc(100% - 0.515rem) 50%, 100% 0;
+}
+
+/* focus */
+.preferences .input:focus,
+.preferences .list:focus {
+    cursor: text;
+}
+
+/*http://stackoverflow.com/questions/20937475/remove-datalist-dropdown-arrow-in-chrome*/
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+
+
+/*
+ *
+ * Labels
+ *
+ */
 .preferences label {
     display: inline-block;
     width: 30px;
     height: 60px;
-    font-size: 0.48rem;
-    line-height: 0.5rem;
     color: #fff;
 }
+
+
+
+/*
+ *
+ * Tooltips
+ *
+ */
+/* TODO: add tooltips */

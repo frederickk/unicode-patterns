@@ -24,6 +24,10 @@
         "message": "Hinzufügen",
         "description": "Preference: add"
     },
+    "extPrefRemove": {
+        "message": "Löschen",
+        "description": "Preference: remove"
+    },
     "extPrefRefresh": {
         "message": "Muster Aktualisieren",
         "description": "Preference: refresh pattern"
@@ -35,5 +39,9 @@
     "extPrefRefreshTimingUnit": {
         "message": "Sekunden",
         "description": "Preference: refresh delay time unit"
+    },
+    "extPrefPatternSchemes": {
+        "message": "Muster Schemen",
+        "description": "Preference: pattern schemes"
     }
 }
