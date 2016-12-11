@@ -41,7 +41,7 @@
         "description": "Preference: refresh delay time unit"
     },
     "extPrefPatternSchemes": {
-        "message": "Pattern schemes",
+        "message": "Manage Pattern schemes",
         "description": "Preference: pattern schemes"
     }
 }

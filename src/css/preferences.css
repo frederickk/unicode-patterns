@@ -40,15 +40,25 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 68vw;
+    width: 100vw;
+    height: 100vh;
     padding: 16vw;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
 
     background-color: transparent;
 
     font-size: 0.45rem;
     line-height: 0.5rem;
 }
-
+@media screen and (max-height: 768px){
+    .preferences #inputs {
+        padding: 4vw 16vw;
+    }
+}
 
 
 /*
@@ -98,11 +108,11 @@
     letter-spacing: 0.6vw;
     text-align: left;
 
-    /* dropdown arrow */
     background-image: linear-gradient(45deg, transparent 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(135deg, rgba(0, 0, 0, 0.15) 50%, transparent 50%);
-    background-size: 0.25rem 0.25rem;
+    /*background-size: 0.25rem 0.25rem;*/
+    background-size: 10px 10px;
     background-repeat: no-repeat;
-    background-position: calc(100% - 0.75rem) 50%, calc(100% - 0.515rem) 50%, 100% 0;
+    background-position: calc(100% - 20px) 50%, calc(100% - 10px) 50%, 100% 0;
 }
 
 
@@ -128,9 +138,6 @@
 }
 .preferences .list:hover {
     background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
-    background-size: 0.25rem 0.25rem;
-    background-repeat: no-repeat;
-    background-position: calc(100% - 0.75rem) 50%, calc(100% - 0.515rem) 50%, 100% 0;
 }
 
 /* focus */
@@ -141,7 +148,8 @@
 
 /*http://stackoverflow.com/questions/20937475/remove-datalist-dropdown-arrow-in-chrome*/
 input::-webkit-calendar-picker-indicator {
-    display: none;
+    /*display: none;*/
+    opacity: 0;
 }
 
 

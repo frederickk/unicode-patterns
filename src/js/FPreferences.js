@@ -30,26 +30,26 @@ class FPreferences {
             this.selectors[val] = document.getElementById(val);
 
             let inputHandler = (event) => {
-                console.log('inputHandler');
                 let ele = event.srcElement;
-                this.storage[ele.id] = (ele.type === 'checkbox')
-                    ? ele.checked
-                    : ele.value;
+
+                this._getElementValue(ele, (val) => {
+                    this.storage[ele.id] = val;
+                });
                 this.save();
                 event.stopPropagation();
             }
             this.selectors[val].addEventListener('change', inputHandler);
             this.selectors[val].addEventListener('input', inputHandler);
-            this.selectors[val].addEventListener('click', event => {
+            this.selectors[val].addEventListener('click', (event) => {
                 event.stopPropagation();
             });
 
             // 2.
             // set defaults
             // TODO: probably not very scalable
-            this.defaults[val] = (this.selectors[val].type === 'checkbox')
-                ? this.selectors[val].checked
-                : this.selectors[val].value;
+            this._getElementValue(this.selectors[val], (v) => {
+                this.defaults[val] = v;
+            });
         });
 
         // 3
@@ -92,6 +92,10 @@ class FPreferences {
             if (ele.type === 'checkbox') {
                 ele.checked = val;
             }
+            else if (ele.tagName.toLowerCase() === 'datalist') {
+                // ele.op
+                // type = ele.tagName.toLowerCase();
+            }
             else {
                 ele.value = val;
             }
@@ -109,6 +113,9 @@ class FPreferences {
      * Saves options to chrome.storage
      */
     save() {
+        console.log('save().this.defaults', this.defaults);
+        console.log('save().this.storage', this.storage);
+
         chrome.storage.sync.set(this.storage, () => {
             console.log('FPreferences save', this.storage);
             // setTimeout(function() {
@@ -154,6 +161,45 @@ class FPreferences {
     clear() {
         console.log('FPreferences', 'clear');
         chrome.storage.sync.clear();
+    }
+
+    // ------------------------------------------------------------------------
+    // _setElementValue(ele, callback=null) {
+    //     let val = ele.value;
+    //     let type = ele.type.toLowerCase();
+    //
+    //     if (ele.type.toLowerCase() === 'checkbox') {
+    //         val = ele.checked;
+    //     }
+    //     else if (ele.tagName.toLowerCase() === 'datalist') {
+    //         type = ele.tagName.toLowerCase();
+    //         val = ele.options = val;
+    //     }
+    //
+    //     if (callback) {
+    //         callback(val, type);
+    //     }
+    // }
+
+    _getElementValue(ele, callback=null) {
+        let val = ele.value;
+        let type = ele.type || '';
+
+        if (type.toLowerCase() === 'checkbox') {
+            val = ele.checked;
+        }
+        else if (ele.tagName.toLowerCase() === 'datalist') {
+            type = ele.tagName.toLowerCase();
+            // http://stackoverflow.com/questions/222841/most-efficient-way-to-convert-an-htmlcollection-to-an-array
+            // http://stackoverflow.com/questions/6138042/javascript-selecbox-options-to-array
+            val = Array.apply(null, ele.options).map(function(e) {
+                return e.text;
+            });
+        }
+
+        if (callback) {
+            callback(val, type);
+        }
     }
 
     // ------------------------------------------------------------------------
