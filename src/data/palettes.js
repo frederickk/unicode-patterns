@@ -1,4 +1,4 @@
-var palettes = {
+let PALETTES = {
     '0': [
         '#ffffff',
         '#ff0000',

@@ -1,4 +1,4 @@
-var patterns = {
+let PATTERNS = {
     '0': {
         'scheme' : ('-|'),
     },
@@ -113,5 +113,9 @@ var patterns = {
 
     '28': {
         'scheme' : ('(－‸ლ)  '),
+    },
+
+    '29': {
+        'scheme' : ('⿰⿱⿲⿳⿴'),
     }
 };

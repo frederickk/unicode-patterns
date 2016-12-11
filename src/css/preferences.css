@@ -19,7 +19,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.65);
 
     z-index: 2000;
 }
@@ -34,6 +34,12 @@
     font-size: 48px;
 
     cursor: pointer;
+}
+.preferences #close:hover {
+    color: #9e9e9e;
+}
+.preferences #close:active {
+    color: #000;
 }
 
 .preferences #inputs {
@@ -124,20 +130,39 @@
     content: '–';
 }
 
+/* hover */
+.preferences label:hover .checkbox {
+    background: #9e9e9e;
+    background: -webkit-radial-gradient(center, ellipse cover, #9e9e9e 50%, #fff 54%, #fff 100%);
+    background: radial-gradient(ellipse at center, #9e9e9e 50%, #fff 54%, #fff 100%);
+}
+.preferences .button:hover {
+    color: #fff;
+    background-color: #9e9e9e;
+}
+.preferences .list:hover {
+    background-image: linear-gradient(45deg, transparent 50%, #9e9e9e 50%), linear-gradient(135deg, #9e9e9e 50%, transparent 50%);
+}
+
+/* active */
+.preferences label:active .checkbox {
+    background: #000;
+    background: -webkit-radial-gradient(center, ellipse cover, #000 50%, #fff 54%, #fff 100%);
+    background: radial-gradient(ellipse at center, #000 50%, #fff 54%, #fff 100%);
+}
+.preferences .button:active {
+    background-color: #000;
+}
+.preferences .list:active {
+    background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
+}
+
+
 /* checked */
 .preferences .checkbox:checked {
     background: #000;
     background: -webkit-radial-gradient(center, ellipse cover, #000 50%, #fff 54%, #fff 100%);
     background: radial-gradient(ellipse at center, #000 50%, #fff 54%, #fff 100%);
-}
-
-/* hover */
-.preferences .button:hover {
-    color: #fff;
-    background-color: #000;
-}
-.preferences .list:hover {
-    background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
 }
 
 /* focus */
@@ -160,9 +185,9 @@ input::-webkit-calendar-picker-indicator {
  *
  */
 .preferences label {
-    display: inline-block;
-    width: 30px;
-    height: 60px;
+    display: grid;
+    width: 5rem;
+    height: 1rem;
     color: #fff;
 }
 

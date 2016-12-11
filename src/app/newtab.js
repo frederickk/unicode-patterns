@@ -141,12 +141,12 @@ function getRandomProperty(obj) {
 }
 
 function getRandomPattern() {
-    const pattern = getRandomProperty(patterns);
+    const pattern = getRandomProperty(PATTERNS);
     return pattern.scheme;
 }
 
 function getRandomColor() {
-    let palette = getRandomProperty(palettes);
+    let palette = getRandomProperty(PALETTES);
 
     let isMonochrome = preferences.get('isMonochrome');
     if (isMonochrome) {

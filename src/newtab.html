@@ -37,15 +37,15 @@
 
 
         <!-- preferences -->
-        <div id="preferences" class="preferences bs-ani-all"> <!-- bs-invisible" -->
+        <div id="preferences" class="preferences bs-ani-all bs-invisible">
             <div id="inputs">
                 <div class="bs-row bs-align-left">
                     <div class="bs-col-1">
-                        <label><input type="checkbox" id="isMonochrome" class="checkbox"><span class="bs-non-interactive" data-localize="__MSG_extPrefMono_">Monochrome palettes</span></label>
+                        <label class="bs-ani-all"><input type="checkbox" id="isMonochrome" class="checkbox bs-ani-all"><span class="bs-non-interactive" data-localize="__MSG_extPrefMono_">Monochrome palettes</span></label>
                     </div>
                     <div class="bs-col-1"></div>
                     <div class="bs-col-1">
-                        <label><input type="checkbox" id="isRefresh" class="checkbox" checked><span class="bs-non-interactive" data-localize="__MSG_extPrefRefresh_">Auto refresh</span></label>
+                        <label class="bs-ani-all"><input type="checkbox" id="isRefresh" class="checkbox bs-ani-all" checked><span class="bs-non-interactive" data-localize="__MSG_extPrefRefresh_">Auto refresh</span></label>
                     </div>
                     <div class="bs-col-1">
                         <label><input id="refreshTiming" value="15" class="input" min="3" maxlength="2" spellcheck="false"><span class="bs-non-interactive" data-localize="__MSG_extPrefRefreshTiming_">Refresh delay</span><sub data-localize="__MSG_extPrefRefreshTimingUnit_">seconds</sub></span></label>
@@ -54,9 +54,9 @@
 
                 <div class="bs-row bs-align-left">
                     <div class="bs-col-3">
-                        <input type="text" id="patternsListInput" list="patternsList" class="list bs-ani-all black" maxlength="45" placeholder="">
+                        <input type="text" id="patternsListInput" list="patternsList" class="list bs-ani-all black" maxlength="45" placeholder="type pattern here">
                         <datalist id="patternsList" class="bs-ani-all black"></datalist>
-                        <label><span class="bs-non-interactive" data-localize="__MSG_extPrefPatternSchemes_">Manage Pattern schemes</span></label>
+                        <label><span class="bs-non-interactive" data-localize="__MSG_extPrefPatternSchemes_">Manage custom pattern schemes</span></label>
                     </div>
                     <div class="bs-col-1">
                         <button id="patterns-add" class="button plus bs-ani-all" data-localize="" alt="add"></button>
@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <div id="close" class="close material-icons">&#xE5CD;</div>
+            <div id="close" class="close material-icons bs-ani-all">&#xE5CD;</div>
         </div>
         <div id="forms">
             <input id="color-0" name="0" type="color" value="#ffffff"/>
