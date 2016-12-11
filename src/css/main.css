@@ -46,6 +46,16 @@ html {
     font-family: 'Roboto Mono', monospace;
 }
 
+a {
+    color: #fff;
+}
+a:hover {
+    color: #9e9e9e;
+}
+a:active {
+    color: #000;
+}
+
 sub {
     padding-top: 0.25rem;
     display: block;
