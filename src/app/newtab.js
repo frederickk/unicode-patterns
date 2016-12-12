@@ -155,7 +155,7 @@ function getRandomColor() {
         let col = palette[parseInt(Math.random() * palette.length)];
         palette = shuffleNodeList([
             getColorContrast(col),
-            getColorShade(col, 0.5),
+            getColorShade(col, 0.33),
             col,
         ]);
     }
@@ -183,11 +183,21 @@ function getColorContrast(hex) {
     let brightness = ((R * 299) + (G * 587) + (B * 114)) / 1000;
 
     return (brightness >= 162)
-        ? '#000000'
-        : '#ffffff';
+        // ? '#1e140f'
+        // : #ffffff;
+        ? getColorShade(hex, -0.66)
+        : getColorShade(hex, 0.66);
 }
 
-// http://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
+/**
+ * return the shade of color
+ * http://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
+ *
+ * @param  {String} hex     HEX color value (e.g. #4285f4)
+ * @param  {Number} percent float percentage of shade; positive = lighter, negative = darker
+ *
+ * @return {String} hex of colors shade
+ */
 function getColorShade(hex, percent) {
     let f = parseInt(hex.slice(1), 16);
     let t = percent < 0
@@ -201,7 +211,7 @@ function getColorShade(hex, percent) {
     let G = f >> 8 & 0x00FF;
     let B = f & 0x0000FF;
 
-    return `#${(0x1000000+(Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1)}`;
+    return `#${(0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1)}`;
 }
 
 

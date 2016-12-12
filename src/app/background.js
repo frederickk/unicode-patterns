@@ -20,7 +20,7 @@ console.log('Initialize unicode-patterns');
 //
 // ------------------------------------------------------------------------
 function init(event) {
-};
+}
 
 // ------------------------------------------------------------------------
 chrome.runtime.onInstalled.addListener(init);

@@ -41,8 +41,8 @@ let preferences;
 
     preferences.load('patternsList').then((result) => {
         result['patternsList'].forEach(function(str) {
-            // TODO: fix the order of these functions matters...
-            // and it shouldn't
+            // TODO: fix the order of these functions,
+            // it currently matters... and it shouldn't
             updateList(patternOptions, str);
             updateDict(PATTERNS, str);
         });
@@ -84,15 +84,23 @@ function closeHandler(event) {
     bs.css.addClass(containerPreferences, 'bs-invisible');
 }
 document.getElementById('close').addEventListener('click', closeHandler);
-containerPreferences.addEventListener('click', closeHandler);
+containerPreferences.addEventListener('click', function(event) {
+    if (patternInput.dataset.isFocused === 'true') {
+        patternInput.dataset.isFocused = false;
+    }
+    else {
+        closeHandler();
+    }
+});
 
 
 // ------------------------------------------------------------------------
-document.getElementById('patternsListInput').addEventListener('click', function() {
+patternInput.addEventListener('click', function() {
+    this.dataset.isFocused = true;
     event.stopPropagation();
 });
-document.getElementById('patternsListInput').addEventListener('mouseout', function() {
-    this.blur();
+patternInput.addEventListener('input', function() {
+    this.dataset.isFocused = false;
 });
 
 
@@ -113,8 +121,8 @@ document.getElementById('patterns-add').addEventListener('click', function() {
             chrome.storage.sync.set({
                 'patternsList': patternsArr
             }, function(items) {
-                // TODO: fix the order of these functions matters...
-                // and it shouldn't
+                // TODO: fix the order of these functions,
+                // it currently matters... and it shouldn't
                 updateList(patternOptions, patternInput.value);
                 updateDict(PATTERNS, patternInput.value);
                 patternInput.value = '';
@@ -154,6 +162,8 @@ document.getElementById('patterns-minus').addEventListener('click', function() {
 
 
 // ------------------------------------------------------------------------
+// TODO: fix character encoding
+// should look into encodeURI (on sender) and decodeURI (on receiever)
 document.getElementById('patterns-test').addEventListener('click', function(event) {
     if (patternInput.value !== '') {
         const href = event.target.parentNode.getAttribute('href');
