@@ -32,11 +32,6 @@ let preferences;
 //
 // ------------------------------------------------------------------------
 (function() {
-    // // populate form
-    // for (let p in PATTERNS) {
-    //     updateList(patternOptions, PATTERNS[p].scheme);
-    // }
-
     preferences = new FPreferences([
         'isMonochrome',
         'isRefresh',
