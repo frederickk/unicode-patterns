@@ -137,9 +137,9 @@
 
 /* hover */
 .preferences label:hover .checkbox {
-    background: #9e9e9e;
-    background: -webkit-radial-gradient(center, ellipse cover, #9e9e9e 50%, #fff 54%, #fff 100%);
-    background: radial-gradient(ellipse at center, #9e9e9e 50%, #fff 54%, #fff 100%);
+    /*background-image: #9e9e9e;*/
+    background-image: -webkit-radial-gradient(center, ellipse cover, #9e9e9e 50%, #fff 54%, #fff 100%);
+    background-image: radial-gradient(ellipse at center, #9e9e9e 50%, #fff 54%, #fff 100%);
 }
 .preferences .button:hover {
     color: #fff;
@@ -151,9 +151,9 @@
 
 /* active */
 .preferences label:active .checkbox {
-    background: #000;
-    background: -webkit-radial-gradient(center, ellipse cover, #000 50%, #fff 54%, #fff 100%);
-    background: radial-gradient(ellipse at center, #000 50%, #fff 54%, #fff 100%);
+    /*background-image: #000;*/
+    background-image: -webkit-radial-gradient(center, ellipse cover, #000 50%, #fff 54%, #fff 100%);
+    background-image: radial-gradient(ellipse at center, #000 50%, #fff 54%, #fff 100%);
 }
 .preferences .button:active {
     background-color: #000;
@@ -165,9 +165,9 @@
 
 /* checked */
 .preferences .checkbox:checked {
-    background: #000;
-    background: -webkit-radial-gradient(center, ellipse cover, #000 50%, #fff 54%, #fff 100%);
-    background: radial-gradient(ellipse at center, #000 50%, #fff 54%, #fff 100%);
+    /*background-image: #000;*/
+    background-image: -webkit-radial-gradient(center, ellipse cover, #000 50%, #fff 54%, #fff 100%);
+    background-image: radial-gradient(ellipse at center, #000 50%, #fff 54%, #fff 100%);
 }
 
 /* focus */
