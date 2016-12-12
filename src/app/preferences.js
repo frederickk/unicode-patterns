@@ -148,3 +148,14 @@ document.getElementById('patterns-minus').addEventListener('click', function() {
 
     event.stopPropagation();
 });
+
+// ------------------------------------------------------------------------
+document.getElementById('patterns-test').addEventListener('click', function(event) {
+    if (patternInput.value !== '') {
+        const href = event.target.parentNode.getAttribute('href');
+        if (href) {
+            location.href = href + `?scheme=${escape(patternInput.value)}`;
+            event.preventDefault();
+        }
+    }
+});
