@@ -43,5 +43,9 @@
     "extPrefPatternSchemes": {
         "message": "Manage custom pattern schemes",
         "description": "Preference: pattern schemes"
+    },
+    "extPrefPatternTest": {
+        "message": "scheme preview",
+        "description": "Preference: URL to tryout pattern scheme"
     }
 }

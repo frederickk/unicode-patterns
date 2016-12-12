@@ -43,5 +43,9 @@
     "extPrefPatternSchemes": {
         "message": "Individualisierte Muster Schemen verwalten",
         "description": "Preference: pattern schemes"
+    },
+    "extPrefPatternTest": {
+        "message": "Schema Vorschau",
+        "description": "Preference: URL to tryout pattern scheme"
     }
 }
