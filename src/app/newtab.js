@@ -107,13 +107,15 @@ function setPattern(container, scheme) {
 
         container.appendChild(div);
     }
+
+    document.getElementById('patternsListInput').setAttribute('placeholder', `create pattern e.g. ${scheme}`);
 }
 
 // ------------------------------------------------------------------------
 function revealCharacters(element) {
     const characters = shuffleNodeList(element.childNodes);
     const len = characters.length;
-    const speed = parseInt(45 * 16 * 0.025);
+    const speed = parseInt(45 * 16 * 0.0125);
 
     let animate;
     let index = 0;
