@@ -111,6 +111,8 @@
 
     border: rgba(0, 0, 0, 0.15) 1px solid;
 
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.35rem;
     /*letter-spacing: 0.6vw;*/
     text-align: left;
 
@@ -123,7 +125,7 @@
 
 .preferences .list::-webkit-input-placeholder {
     font-family: 'Roboto Mono', monospace;
-    font-size: 0.25rem;
+    font-size: 0.35rem;
     line-height: 1rem;
 }
 

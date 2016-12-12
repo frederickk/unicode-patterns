@@ -49,6 +49,7 @@ let preferences;
     });
 })();
 
+
 // ------------------------------------------------------------------------
 function updateList(ele, str, index=null) {
     let option = document.createElement('option');
@@ -77,6 +78,7 @@ document.getElementById('preferences-return').addEventListener('click', function
     bs.css.removeClass(containerPreferences, 'bs-invisible');
 });
 
+
 // ------------------------------------------------------------------------
 function closeHandler(event) {
     bs.css.addClass(containerPreferences, 'bs-invisible');
@@ -84,11 +86,17 @@ function closeHandler(event) {
 document.getElementById('close').addEventListener('click', closeHandler);
 containerPreferences.addEventListener('click', closeHandler);
 
+
 // ------------------------------------------------------------------------
 document.getElementById('patternsListInput').addEventListener('click', function() {
     event.stopPropagation();
 });
+document.getElementById('patternsListInput').addEventListener('mouseout', function() {
+    this.blur();
+});
 
+
+// ------------------------------------------------------------------------
 // TODO: can all of this be folded into FPreferences
 // in a scalable/future-usage way?
 document.getElementById('patterns-add').addEventListener('click', function() {
@@ -143,6 +151,7 @@ document.getElementById('patterns-minus').addEventListener('click', function() {
 
     event.stopPropagation();
 });
+
 
 // ------------------------------------------------------------------------
 document.getElementById('patterns-test').addEventListener('click', function(event) {
