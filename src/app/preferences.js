@@ -21,6 +21,7 @@
 const containerPreferences = document.getElementById('preferences');
 const patternInput = document.getElementById('patternsListInput');
 const patternOptions = document.getElementById('patternsList');
+const patternTypeface = document.getElementById('patternsTypeface');
 
 let preferences;
 
@@ -36,7 +37,8 @@ let preferences;
         'isMonochrome',
         'isRefresh',
         'refreshTiming',
-        'patternsList'
+        'patternsList',
+        // 'patternsTypeface'
     ]);
 
     preferences.load('patternsList').then((result) => {
@@ -88,6 +90,9 @@ containerPreferences.addEventListener('click', function(event) {
     if (patternInput.dataset.isFocused === 'true') {
         patternInput.dataset.isFocused = false;
     }
+    else if (patternTypeface.dataset.isFocused === 'true') {
+        patternTypeface.dataset.isFocused = false;
+    }
     else {
         closeHandler();
     }
@@ -100,6 +105,14 @@ patternInput.addEventListener('click', function() {
     event.stopPropagation();
 });
 patternInput.addEventListener('input', function() {
+    this.dataset.isFocused = false;
+});
+
+patternTypeface.addEventListener('click', function() {
+    this.dataset.isFocused = true;
+    event.stopPropagation();
+});
+patternTypeface.addEventListener('change', function() {
     this.dataset.isFocused = false;
 });
 

@@ -84,6 +84,9 @@
     overflow: hidden;
     display: inline-block;
 
+    -webkit-border-radius: 0;
+            border-radius: 0;
+
     white-space: pre;
     text-align: center;
     background-color: #fff;

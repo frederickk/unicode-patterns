@@ -102,7 +102,7 @@ function setPattern(container, scheme) {
     let len = scheme.length;
     for (let i = 0; i < 45 * 16; i++) {
         let div = document.createElement('div');
-        div.classList.add('pattern-char', 'bs-invisible');
+        div.classList.add('pattern-char', 'bs-invisible', 'unscii');
         div.innerHTML = scheme[i % len];
 
         container.appendChild(div);

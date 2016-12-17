@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Unscii';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./unscii-16-full.woff') format('woff'),
+         /*url('./unscii-16-full.woff') format('woff2'),*/
+         url('./unscii-16-full.ttf')  format('truetype'),
+         url('./unscii-16-full.otf') format('opentype');
+}

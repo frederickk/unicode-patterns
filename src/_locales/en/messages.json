@@ -47,5 +47,9 @@
     "extPrefPatternTest": {
         "message": "scheme preview",
         "description": "Preference: URL to tryout pattern scheme"
+    },
+    "extPrefPatternTypeface": {
+        "message": "Pattern typeface",
+        "description": "Preference: typeface for patterns"
     }
 }
