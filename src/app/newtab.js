@@ -98,11 +98,13 @@ function updateColorChars(col) {
 // ------------------------------------------------------------------------
 function setPattern(container, scheme) {
     container.innerHTML = '';
+    const patternTypeface = getTypeface();
 
     let len = scheme.length;
     for (let i = 0; i < 45 * 16; i++) {
         let div = document.createElement('div');
-        div.classList.add('pattern-char', 'bs-invisible', 'unscii');
+        // div.classList.add('pattern-char', 'bs-invisible', 'unscii');
+        div.classList.add('pattern-char', 'bs-invisible', patternTypeface);
         div.innerHTML = scheme[i % len];
 
         container.appendChild(div);
@@ -164,6 +166,10 @@ function getRandomColor() {
         col.value = palette[parseInt(col.name) % palette.length];
         updateColorChars(col);
     });
+}
+
+function getTypeface() {
+    return preferences.get('patternsTypeface');
 }
 
 // ------------------------------------------------------------------------

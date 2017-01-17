@@ -30,10 +30,10 @@ class FPreferences {
             this.selectors[val] = document.getElementById(val);
 
             let inputHandler = (event) => {
-                let ele = event.srcElement;
+                let self = event.srcElement;
 
-                this._getElementValue(ele, (val) => {
-                    this.storage[ele.id] = val;
+                this._getElementValue(self, (val) => {
+                    this.storage[self.id] = val;
                 });
                 this.save();
                 event.stopPropagation();
@@ -175,12 +175,18 @@ class FPreferences {
     //         type = ele.tagName.toLowerCase();
     //         val = ele.options = val;
     //     }
+    //     else if (ele.tagName.toLowerCase() === 'select') {
+    //         type = ele.tagName.toLowerCase();
+    //         val = ele.options = val;
+    //     }
     //
     //     if (callback) {
     //         callback(val, type);
     //     }
     // }
 
+    // TODO: what is the functional difference between this and this.get(id)?
+    // one or the other seems redundant... tsk tsk
     _getElementValue(ele, callback=null) {
         let val = ele.value;
         let type = ele.type || '';
@@ -196,6 +202,10 @@ class FPreferences {
                 return e.text;
             });
         }
+        // TODO: is this necessary?
+        else if (type.toLowerCase() === 'select') {
+            val = this.selectors[id].options[this.selectors[id].selectedIndex].value;
+        }
 
         if (callback) {
             callback(val, type);
@@ -206,6 +216,10 @@ class FPreferences {
     get(id) {
         if (this.selectors[id].type === 'checkbox') {
             return this.selectors[id].checked;
+        }
+        // TODO: is this necessary?
+        else if (this.selectors[id].type === 'select') {
+            return this.selectors[id].options[this.selectors[id].selectedIndex].value;
         }
         else {
             return this.selectors[id].value;

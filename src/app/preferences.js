@@ -38,7 +38,7 @@ let preferences;
         'isRefresh',
         'refreshTiming',
         'patternsList',
-        // 'patternsTypeface'
+        'patternsTypeface'
     ]);
 
     preferences.load('patternsList').then((result) => {
@@ -114,6 +114,19 @@ patternTypeface.addEventListener('click', function() {
 });
 patternTypeface.addEventListener('change', function() {
     this.dataset.isFocused = false;
+    let val = bs.html.getSelectValue(this).value;
+
+    chrome.storage.sync.set({
+        'patternTypeface': val
+    }, function(items) {
+        let chars = document.querySelectorAll('.pattern-char');
+        chars.forEach(element => {
+            element.classList = [];
+            element.classList.add('pattern-char', val);
+        });
+    });
+
+    event.stopPropagation();
 });
 
 
