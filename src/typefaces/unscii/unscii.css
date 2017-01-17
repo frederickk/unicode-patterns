@@ -6,10 +6,4 @@
          /*url('./unscii-16-full.woff') format('woff2'),'OTS parsing error: Not a valid font data' */
          url('./unscii-16-full.ttf')  format('truetype'),
          url('./unscii-16-full.otf') format('opentype');
-
-    /*
-    src: url('./unscii-8.woff') format('woff'),
-         url('./unscii-8.ttf')  format('truetype'),
-         url('./unscii-8.otf') format('opentype');
-    */
 }
