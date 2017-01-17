@@ -4,6 +4,8 @@
  * unicode-patterns
  * preferences.js
  *
+ * TODO: make this into a class?
+ *
  * Ken Frederick
  * ken.frederick@gmx.de
  *

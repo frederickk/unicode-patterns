@@ -5,6 +5,8 @@ console.log('unicode-patterns Loaded');
  * unicode-patterns
  * newtab.js
  *
+ * TODO: make this into a class?
+ *
  * Ken Frederick
  * ken.frederick@gmx.de
  *
