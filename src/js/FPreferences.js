@@ -113,11 +113,11 @@ class FPreferences {
      * Saves options to chrome.storage
      */
     save() {
-        console.log('save().this.defaults', this.defaults);
-        console.log('save().this.storage', this.storage);
+        // console.log('save().this.defaults', this.defaults);
+        // console.log('save().this.storage', this.storage);
 
         chrome.storage.sync.set(this.storage, () => {
-            console.log('FPreferences save', this.storage);
+            // console.log('FPreferences save', this.storage);
             // setTimeout(function() {
             // }, 1000);
         });
@@ -230,14 +230,14 @@ class FPreferences {
     onChange(changes, namespace) {
         for (let key in changes) {
             let storageChange = changes[key];
-            console.log(
-                'FPreferences',
-                'Storage key "%s" in namespace "%s" changed. Old value was "%s", new value is "%s".',
-                key,
-                namespace,
-                storageChange.oldValue,
-                storageChange.newValue
-            );
+            // console.log(
+            //     'FPreferences',
+            //     'Storage key "%s" in namespace "%s" changed. Old value was "%s", new value is "%s".',
+            //     key,
+            //     namespace,
+            //     storageChange.oldValue,
+            //     storageChange.newValue
+            // );
         }
     }
 

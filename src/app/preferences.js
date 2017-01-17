@@ -44,6 +44,8 @@ let preferences;
     ]);
 
     preferences.load('patternsList').then((result) => {
+        updateTypefaceInfo(preferences.get('patternsTypeface'));
+
         result['patternsList'].forEach(function(str) {
             // TODO: fix the order of these functions,
             // it currently matters... and it shouldn't
@@ -51,6 +53,7 @@ let preferences;
             updateDict(PATTERNS, str);
         });
     });
+
 })();
 
 
@@ -71,6 +74,23 @@ function updateDict(dict, str, index=null) {
     return len;
 }
 
+
+// ------------------------------------------------------------------------
+function updateTypefaceInfo(val) {
+    let info = document.getElementById('patternsTypefaceInfo');
+    if (val === 'unscii') {
+        info.href = 'http://pelulamu.net/unscii/';
+    }
+    else if (val === 'roboto') {
+        info.href = 'https://fonts.google.com/specimen/Roboto+Mono';
+    }
+    else if (val === 'space') {
+        info.href = 'https://fonts.google.com/specimen/Space+Mono';
+    }
+    else if (val === 'cutive') {
+        info.href = 'https://fonts.google.com/specimen/Cutive+Mono';
+    }
+}
 
 
 // ------------------------------------------------------------------------
@@ -117,6 +137,8 @@ patternTypeface.addEventListener('click', function() {
 patternTypeface.addEventListener('change', function() {
     this.dataset.isFocused = false;
     let val = bs.html.getSelectValue(this).value;
+
+    updateTypefaceInfo(val);
 
     chrome.storage.sync.set({
         'patternTypeface': val

@@ -59,7 +59,7 @@ function triggerRefresh() {
     let refresh = window.setTimeout(function() {
         let isRefresh = preferences.get('isRefresh');
         if (isRefresh) {
-            console.log(`refreshing every ${refreshTiming} seconds`);
+            // console.log(`refreshing every ${refreshTiming} seconds`);
             container.innerHTML = '';
             init();
         }
