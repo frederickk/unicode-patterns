@@ -82,6 +82,7 @@ sub {
 }
 .unscii {
     font-family: 'Unscii';
+    -webkit-font-smoothing: none;
 }
 .cutive {
     font-family: 'Cutive Mono';
