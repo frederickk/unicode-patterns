@@ -1,4 +1,3 @@
-console.log('unicode-patterns Loaded');
 'use strict';
 
 /**!

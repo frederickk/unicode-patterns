@@ -52,6 +52,8 @@ let preferences;
             updateList(patternOptions, str);
             updateDict(PATTERNS, str);
         });
+    }).catch((error) => {
+        // console.error(error);
     });
 
 })();

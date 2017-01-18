@@ -1,4 +1,4 @@
-console.log('Initialize unicode-patterns');
+'use strict';
 
 /**!
  * unicode-patterns

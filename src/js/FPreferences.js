@@ -18,7 +18,7 @@
 
 class FPreferences {
     constructor(ids) {
-        console.log('FPreferences', 'init', ids);
+        // console.log('FPreferences', 'init', ids);
 
         this.selectors = {};
         this.defaults = {};
@@ -152,14 +152,14 @@ class FPreferences {
                 }
             }
             catch (exception) {
-                console.error('FPreferences', 'chrome.storage.sync.get() error', exception);
+                // console.error('FPreferences', 'chrome.storage.sync.get() error', exception);
                 // throw new Error('Selector elements are undefined');
             }
         });
     }
 
     clear() {
-        console.log('FPreferences', 'clear');
+        // console.log('FPreferences', 'clear');
         chrome.storage.sync.clear();
     }
 
@@ -252,10 +252,10 @@ class FPreferences {
 // ------------------------------------------------------------------------
 chrome.runtime.onInstalled.addListener((details) => {
     if (details.reason == 'install') {
-        console.log('FPreferences', 'This is a first install!');
+        // console.log('FPreferences', 'This is a first install!');
     }
     else if (details.reason == 'update') {
         let thisVersion = chrome.runtime.getManifest().version;
-        console.log('FPreferences', `Updated from ${details.previousVersion} to ${thisVersion}!`);
+        // console.log('FPreferences', `Updated from ${details.previousVersion} to ${thisVersion}!`);
     }
 });
