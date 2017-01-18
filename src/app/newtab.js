@@ -152,6 +152,7 @@ function getRandomPattern() {
 
 function getRandomColor() {
     let palette = getRandomProperty(PALETTES);
+    palette = shuffleNodeList(palette);
 
     let isMonochrome = preferences.get('isMonochrome');
     if (isMonochrome) {
