@@ -45,8 +45,16 @@ function init() {
     revealCharacters(row);
 
     // ...and set initial colors
-    getRandomColor();
-    setColor();
+    let patternsPalette = preferences.get('patternsPalette');
+    let isMonochrome = preferences.get('isMonochrome');
+
+    if (patternsPalette === 'generative') {
+        getColorGenerative(setColor, isMonochrome);
+    }
+    else {
+        getColorPaletteDefined(setColor, isMonochrome);
+    }
+
 
     // and trigger refresh
     refreshTiming = preferences.get('refreshTiming');
@@ -66,33 +74,6 @@ function triggerRefresh() {
             // window.clearTimeout(refresh);
         }
     }, refreshTiming * 1000);
-}
-
-
-// ------------------------------------------------------------------------
-function setColor() {
-    inputColors.forEach(col => {
-        updateColorChars(col);
-    });
-}
-
-function updateColorChars(col) {
-    let index = parseInt(col.name);
-    let selector = `.pattern-char:nth-child(${index}n)`;
-
-    if (index === 0) {
-        // TODO: this is a little sloppy... but whatever
-        document.body.style.backgroundColor = col.value;
-        return;
-    }
-    else if (index === 1) {
-        selector = `.pattern-char:nth-child(${index}n):not(:nth-child(2n)):not(:nth-child(3n))`;
-    }
-
-    let chars = document.querySelectorAll(selector);
-    chars.forEach(element => {
-        element.style.color = col.value;
-    });
 }
 
 
@@ -150,11 +131,59 @@ function getRandomPattern() {
     return pattern.scheme;
 }
 
-function getRandomColor() {
-    let palette = getRandomProperty(PALETTES);
-    palette = shuffleNodeList(palette);
 
-    let isMonochrome = preferences.get('isMonochrome');
+// ------------------------------------------------------------------------
+function setColor(colArray) {
+    inputColors.forEach((col, index) => {
+        col.value = colArray[index % colArray.length];
+        updateColorChars(col);
+    });
+}
+
+function updateColorChars(col) {
+    let index = parseInt(col.name);
+    let selector = `.pattern-char:nth-child(${index}n)`;
+
+    if (index === 0) {
+        // TODO: this is a little sloppy... but whatever
+        document.body.style.backgroundColor = col.value;
+        return;
+    }
+    else if (index === 1) {
+        selector = `.pattern-char:nth-child(${index}n):not(:nth-child(2n)):not(:nth-child(3n))`;
+    }
+
+    let chars = document.querySelectorAll(selector);
+    chars.forEach(element => {
+        element.style.color = col.value;
+    });
+}
+
+
+// ------------------------------------------------------------------------
+function getColorGenerative(callback, isMonochrome=false) {
+    let hue = parseInt((new Date().getMinutes() / 60) * 360) + 1;
+    let saturation = parseInt((new Date().getSeconds() / 60) * 100);
+    let lightness = parseInt((new Date().getHours() / 24) * 100);
+    let mode = 'analogic-complement';
+
+    if (isMonochrome) {
+        mode = 'monochrome'; // monochrome-light || monochrome-dark
+    }
+
+    bs.data.loadURL(`http://www.thecolorapi.com/scheme?hsl=${hue},${saturation}%,${lightness}%&mode=${mode}&count=4&format=json`).then(function(response) {
+        let json = JSON.parse(response);
+        let colArray = [];
+        json.colors.forEach((item) => {
+            colArray.push(item.hex.value);
+        });
+        callback(colArray);
+    });
+}
+
+function getColorPaletteDefined(callback, isMonochrome=false) {
+    let palette = getRandomProperty(PALETTES);
+
     if (isMonochrome) {
         let col = palette[parseInt(Math.random() * palette.length)];
         palette = shuffleNodeList([
@@ -163,13 +192,15 @@ function getRandomColor() {
             col,
         ]);
     }
+    else {
+        palette = shuffleNodeList(palette);
+    }
 
-    inputColors.forEach((col, index) => {
-        col.value = palette[parseInt(col.name) % palette.length];
-        updateColorChars(col);
-    });
+    callback(palette);
 }
 
+
+// ------------------------------------------------------------------------
 function getTypeface() {
     return preferences.get('patternsTypeface');
 }

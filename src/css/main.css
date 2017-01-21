@@ -116,14 +116,13 @@ sub {
     transition: opacity 350ms ease-in-out;
 }
 .pattern-char:nth-child(1n) {
-    color: #f00;
-    /*animation-name: ani-blue;*/
+    color: transparent; /* #f00; */
 }
 .pattern-char:nth-child(2n) {
-    color: gold;
+    color: transparent; /* gold; */
 }
 .pattern-char:nth-child(3n) {
-    color: #00f;
+    color: transparent; /* #00f; */
 }
 
 
@@ -241,57 +240,6 @@ sub {
  * Animation
  *
  */
-@keyframes ani-black {
-    0% {
-        background-color: #000;
-    }
-    25% {
-        background-color: #00f;
-    }
-    50% {
-        background-color: #f00;
-    }
-    75% {
-        background-color: gold;
-    }
-    100% {
-        background-color: #000;
-    }
-}
-@keyframes ani-blue {
-    0% {
-        color: #00f;
-    }
-    50% {
-        color: #f00;
-    }
-    100% {
-        color: #00f;
-    }
-}
-@keyframes ani-red {
-    0% {
-        color: #f00;
-    }
-    50% {
-        color: gold;
-    }
-    100% {
-        color: #f00;
-    }
-}
-@keyframes ani-gold {
-    0% {
-        color: gold;
-    }
-    50% {
-        color: #00f;
-    }
-    100% {
-        color: gold;
-    }
-}
-
 @keyframes ani-rotate-clockwise {
     0% {
         transform: rotate(0deg);

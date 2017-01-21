@@ -21,6 +21,7 @@
 //
 // ------------------------------------------------------------------------
 const containerPreferences = document.getElementById('preferences');
+const paletteSource = document.getElementById('patternsPalette');
 const patternInput = document.getElementById('patternsListInput');
 const patternOptions = document.getElementById('patternsList');
 const patternTypeface = document.getElementById('patternsTypeface');
@@ -36,6 +37,7 @@ let preferences;
 // ------------------------------------------------------------------------
 (function() {
     preferences = new FPreferences([
+        'patternsPalette',
         'isMonochrome',
         'isRefresh',
         'refreshTiming',
@@ -114,12 +116,31 @@ containerPreferences.addEventListener('click', function(event) {
     if (patternInput.dataset.isFocused === 'true') {
         patternInput.dataset.isFocused = false;
     }
+    else if (paletteSource.dataset.isFocused === 'true') {
+        paletteSource.dataset.isFocused = false;
+    }
     else if (patternTypeface.dataset.isFocused === 'true') {
         patternTypeface.dataset.isFocused = false;
     }
     else {
         closeHandler();
     }
+});
+
+
+// ------------------------------------------------------------------------
+paletteSource.addEventListener('click', function() {
+    this.dataset.isFocused = true;
+    event.stopPropagation();
+});
+paletteSource.addEventListener('change', function() {
+    this.dataset.isFocused = false;
+    let val = bs.html.getSelectValue(this).value;
+
+    chrome.storage.sync.set({
+        'patternsPalette': val
+    });
+    event.stopPropagation();
 });
 
 

@@ -41,9 +41,17 @@
             <div id="inputs">
                 <div class="bs-row bs-align-left">
                     <div class="bs-col-1">
+                        <label class="bs-ani-all">
+                            <select id="patternsPalette" class="list">
+                                <option value="random" data-localize="__MSG_extPrefPaletteDefined_" selected>Defined</option>
+                                <option value="generative" data-localize="__MSG_extPrefPaletteGenerative_">Generative</option>
+                            </select>
+                            <span id="patternsPaletteLabelText" class="bs-non-interactive" data-localize="__MSG_extPrefPalette_">Pallete Source</span>
+                        </label>
+                    </div>
+                    <div class="bs-col-1">
                         <label class="bs-ani-all"><input type="checkbox" id="isMonochrome" class="checkbox bs-ani-all"><span class="bs-non-interactive" data-localize="__MSG_extPrefMono_">Monochrome palettes</span></label>
                     </div>
-                    <div class="bs-col-1"></div>
                     <div class="bs-col-1">
                         <label class="bs-ani-all"><input type="checkbox" id="isRefresh" class="checkbox bs-ani-all" checked><span class="bs-non-interactive" data-localize="__MSG_extPrefRefresh_">Auto refresh</span></label>
                     </div>

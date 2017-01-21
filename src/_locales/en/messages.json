@@ -12,10 +12,24 @@
         "message": "Preferences",
         "description": ""
     },
+
+    "extPrefPalette": {
+        "message": "Palette Source",
+        "description": "Preference: palette source"
+    },
+    "extPrefPaletteGenerative": {
+        "message": "Generative",
+        "description": "Preference: generative colors via http://www.thecolorapi.com/"
+    },
+    "extPrefPaletteDefined": {
+        "message": "Defined",
+        "description": "Preference: pre-defined colors via palettes.js"
+    },
     "extPrefMono": {
-        "message": "Monochromic palettes",
+        "message": "Monochrome Palette",
         "description": "Preference: monochrome colors"
     },
+
     "extPrefCustom": {
         "message": "Pattern Scheme",
         "description": "Preference: custom pattern scheme"
@@ -28,6 +42,7 @@
         "message": "Remove",
         "description": "Preference: remove"
     },
+
     "extPrefRefresh": {
         "message": "Auto refresh",
         "description": "Preference: refresh pattern"
@@ -40,6 +55,7 @@
         "message": "seconds",
         "description": "Preference: refresh delay time unit"
     },
+
     "extPrefPatternSchemes": {
         "message": "Manage custom pattern schemes",
         "description": "Preference: pattern schemes"
