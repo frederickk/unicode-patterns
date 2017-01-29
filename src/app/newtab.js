@@ -162,9 +162,9 @@ function updateColorChars(col) {
 
 // ------------------------------------------------------------------------
 function getColorGenerative(callback, isMonochrome=false) {
-    let hue = parseInt((new Date().getMinutes() / 60) * 360) + 1;
-    let saturation = parseInt((new Date().getSeconds() / 60) * 100);
-    let lightness = parseInt((new Date().getHours() / 24) * 100);
+    let hue = parseInt(((new Date().getHours() * new Date().getMinutes() * new Date().getSeconds()) / (24 * 60 * 60)) * 360) + 1;
+    let saturation = 100;
+    let lightness = 50;
     let mode = 'analogic-complement';
 
     if (isMonochrome) {
