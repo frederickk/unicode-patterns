@@ -82,7 +82,8 @@
     border: 0;
     outline: none;
     overflow: hidden;
-    display: inline-block;
+    /*display: inline-block;*/
+    display: block;
 
     -webkit-border-radius: 0;
             border-radius: 0;
