@@ -108,6 +108,11 @@
             border-radius: 50%;
     line-height: 0;
 }
+.preferences .button.plus,
+.preferences .button.minus {
+    display: inline-block;
+}
+
 .preferences .list {
     width: calc(100% - 0.5rem);
     margin-bottom: 0.25rem;
@@ -196,8 +201,9 @@ input::-webkit-calendar-picker-indicator {
  *
  */
 .preferences label {
-    display: grid;
-    width: 5rem;
+    /*display: grid;*/
+    display: block;
+    width: 4.859rem; /* ridiculous value, but fixes the rag of "Monochrome Palette" and keeps the (i) on the same line */
     height: 1rem;
     color: #fff;
 }
