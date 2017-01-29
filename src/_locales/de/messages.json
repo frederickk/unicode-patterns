@@ -18,7 +18,7 @@
         "description": "Preference: palette source"
     },
     "extPrefPaletteGenerative": {
-        "message": "Generative",
+        "message": "Generativ",
         "description": "Preference: generative colors via http://www.thecolorapi.com/"
     },
     "extPrefPaletteDefined": {
