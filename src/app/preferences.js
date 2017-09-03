@@ -2,247 +2,265 @@
 
 /**!
  * unicode-patterns
- * preferences.js
- *
- * TODO: make this into a class?
+ * Preferences.js
  *
  * Ken Frederick
  * ken.frederick@gmx.de
  *
- * http://kennethfrederick.de/
- * http://blog.kennethfrederick.de/
+ * http://kenfrederick.de/
+ * http://blog.kenfrederick.de/
  *
+ *
+ * Wrapper class for FPreferences to handle UnicodePatterns specific prefrences
+ *
+ * Requires
+ * - FPreferences.js
  */
 
 
-// ------------------------------------------------------------------------
-//
-// Properties
-//
-// ------------------------------------------------------------------------
-const containerPreferences = document.getElementById('preferences');
-const paletteSource = document.getElementById('patternsPalette');
-const patternInput = document.getElementById('patternsListInput');
-const patternOptions = document.getElementById('patternsList');
-const patternTypeface = document.getElementById('patternsTypeface');
+class Preferences {
+  // ------------------------------------------------------------------------
+  //
+  // Constructor
+  //
+  // ------------------------------------------------------------------------
+  constructor() {
+    this._containerPreferences = document.getElementById('preferences');
 
-let preferences;
+    this._paletteSource = document.getElementById('patternsPalette');
+    this._patternInput = document.getElementById('patternsListInput');
+    this._patternOptions = document.getElementById('patternsList');
+    this._patternTypeface = document.getElementById('patternsTypeface');
 
-
-
-// ------------------------------------------------------------------------
-//
-// Methods
-//
-// ------------------------------------------------------------------------
-(function() {
-    preferences = new FPreferences([
-        'patternsPalette',
-        'isMonochrome',
-        'isRefresh',
-        'refreshTiming',
-        'patternsList',
-        'patternsTypeface'
+    this._fpreferences = new FPreferences([
+      'patternsPalette',
+      'isMonochrome',
+      'isRefresh',
+      'refreshTiming',
+      'patternsList',
+      'patternsTypeface'
     ]);
 
-    preferences.load('patternsList').then((result) => {
-        updateTypefaceInfo(preferences.get('patternsTypeface'));
+    this._init();
+    this._initEvents();
+  }
 
-        result['patternsList'].forEach(function(str) {
-            // TODO: fix the order of these functions,
-            // it currently matters... and it shouldn't
-            updateList(patternOptions, str);
-            updateDict(PATTERNS, str);
-        });
+
+
+  // ------------------------------------------------------------------------
+  //
+  // Methods
+  //
+  // ------------------------------------------------------------------------
+  _init() {
+    this._fpreferences.load('patternsList').then((result) => {
+      this.updateTypefaceInfo(this._fpreferences.get('patternsTypeface'));
+
+      result['patternsList'].forEach((str) => {
+        // TODO: fix the order of these functions,
+        // it currently matters... and it shouldn't
+        this.updateList(this._patternOptions, str);
+        this.updateDict(PATTERNS, str);
+      });
     }).catch((error) => {
-        // console.error(error);
+      // console.error(error);
     });
 
-})();
+  }
 
 
-// ------------------------------------------------------------------------
-function updateList(ele, str, index=null) {
+  // ------------------------------------------------------------------------
+  updateList(element, str, index=null) {
     let option = document.createElement('option');
     option.text = str.replace(/ /g, '\xA0');
     option.dataset.index = index || Object.keys(PATTERNS).length;
-    ele.appendChild(option);
+    element.appendChild(option);
     return option;
-}
+  }
 
-function updateDict(dict, str, index=null) {
+  updateDict(dict, str, index=null) {
     let len = index || Object.keys(dict).length;
     dict[len.toString()] = {
-        'scheme' : (str)
+      'scheme': (str)
     };
     return len;
-}
+  }
 
-
-// ------------------------------------------------------------------------
-function updateTypefaceInfo(val) {
+  updateTypefaceInfo(val) {
     let info = document.getElementById('patternsTypefaceInfo');
     if (val === 'unscii') {
-        info.href = 'http://pelulamu.net/unscii/';
+      info.href = 'http://pelulamu.net/unscii/';
     }
     else if (val === 'roboto') {
-        info.href = 'https://fonts.google.com/specimen/Roboto+Mono';
+      info.href = 'https://fonts.google.com/specimen/Roboto+Mono';
     }
     else if (val === 'space') {
-        info.href = 'https://fonts.google.com/specimen/Space+Mono';
+      info.href = 'https://fonts.google.com/specimen/Space+Mono';
     }
     else if (val === 'cutive') {
-        info.href = 'https://fonts.google.com/specimen/Cutive+Mono';
+      info.href = 'https://fonts.google.com/specimen/Cutive+Mono';
     }
-}
+  }
+
+  get(id) {
+    return this._fpreferences.get(id);
+  }
 
 
-// ------------------------------------------------------------------------
-//
-// Events
-//
-// ------------------------------------------------------------------------
-document.getElementById('preferences-return').addEventListener('click', function(event) {
-    bs.css.removeClass(containerPreferences, 'bs-invisible');
-});
 
-
-// ------------------------------------------------------------------------
-function closeHandler(event) {
-    bs.css.addClass(containerPreferences, 'bs-invisible');
-}
-document.getElementById('close').addEventListener('click', closeHandler);
-containerPreferences.addEventListener('click', function(event) {
-    if (patternInput.dataset.isFocused === 'true') {
-        patternInput.dataset.isFocused = false;
-    }
-    else if (paletteSource.dataset.isFocused === 'true') {
-        paletteSource.dataset.isFocused = false;
-    }
-    else if (patternTypeface.dataset.isFocused === 'true') {
-        patternTypeface.dataset.isFocused = false;
-    }
-    else {
-        closeHandler();
-    }
-});
-
-
-// ------------------------------------------------------------------------
-paletteSource.addEventListener('click', function() {
-    this.dataset.isFocused = true;
-    event.stopPropagation();
-});
-paletteSource.addEventListener('change', function() {
-    this.dataset.isFocused = false;
-    let val = bs.html.getSelectValue(this).value;
-
-    chrome.storage.sync.set({
-        'patternsPalette': val
+  // ------------------------------------------------------------------------
+  //
+  // Events
+  //
+  // ------------------------------------------------------------------------
+  _initEvents() {
+    document.getElementById('preferences-return').addEventListener('click', (event) => {
+      bs.css.removeClass(this._containerPreferences, 'bs-invisible');
     });
-    event.stopPropagation();
-});
+
+    document.getElementById('close').addEventListener('click', () => {
+      this._closeHandler();
+    });
+    this._containerPreferences.addEventListener('click', (event) => {
+      if (this._patternInput.dataset.isFocused === 'true') {
+        this._patternInput.dataset.isFocused = false;
+      }
+      else if (this._paletteSource.dataset.isFocused === 'true') {
+        this._paletteSource.dataset.isFocused = false;
+      }
+      else if (this._patternTypeface.dataset.isFocused === 'true') {
+        this._patternTypeface.dataset.isFocused = false;
+      }
+      else {
+        this._closeHandler();
+      }
+    });
 
 
-// ------------------------------------------------------------------------
-patternInput.addEventListener('click', function() {
-    this.dataset.isFocused = true;
-    event.stopPropagation();
-});
-patternInput.addEventListener('input', function() {
-    this.dataset.isFocused = false;
-});
+    // palette sources
+    this._paletteSource.addEventListener('click', (event) => {
+      this._focusHandler(event, true);
+    });
+    this._paletteSource.addEventListener('change', (event) => {
+      this._focusHandler(event, false);
+      let val = bs.html.getSelectValue(this).value;
 
-patternTypeface.addEventListener('click', function() {
-    this.dataset.isFocused = true;
-    event.stopPropagation();
-});
-patternTypeface.addEventListener('change', function() {
-    this.dataset.isFocused = false;
-    let val = bs.html.getSelectValue(this).value;
+      chrome.storage.sync.set({
+        'patternsPalette': val
+      });
+    });
 
-    updateTypefaceInfo(val);
 
-    chrome.storage.sync.set({
+    // pattern inputs
+    this._patternInput.addEventListener('click', (event) => {
+      this._focusHandler(event, true);
+    });
+    this._patternInput.addEventListener('input', (event) => {
+      this._focusHandler(event, false);
+    });
+
+
+    // pattern typeface
+    this._patternTypeface.addEventListener('click', (event) => {
+      this._focusHandler(event, true);
+    });
+    this._patternTypeface.addEventListener('change', (event) => {
+      this._focusHandler(event, false);
+      let val = bs.html.getSelectValue(event.srcElement).value;
+
+      this.updateTypefaceInfo(val);
+
+      chrome.storage.sync.set({
         'patternTypeface': val
-    }, function(items) {
+      }, (items) => {
         let chars = document.querySelectorAll('.pattern-char');
         chars.forEach(element => {
-            element.classList = [];
-            element.classList.add('pattern-char', val);
+          element.classList = [];
+          element.classList.add('pattern-char', val);
         });
+      });
     });
 
-    event.stopPropagation();
-});
 
+    // TODO: can all of this be folded into FPreferences
+    // in a scalable/future-usage way?
+    document.getElementById('patterns-add').addEventListener('click', () => {
+      if (this._patternInput.value !== '') {
+        let patternsArr = [this._patternInput.value];
 
-// ------------------------------------------------------------------------
-// TODO: can all of this be folded into FPreferences
-// in a scalable/future-usage way?
-document.getElementById('patterns-add').addEventListener('click', function() {
-    if (patternInput.value !== '') {
-        let patternsArr = [patternInput.value];
+        this._fpreferences.load('patternsList').then((result) => {
+          let patternsList = result['patternsList'];
 
-        preferences.load('patternsList').then((result) => {
-            let patternsList = result['patternsList'];
+          if (typeof patternsList === 'array' || typeof patternsList === 'object') {
+            patternsArr = patternsArr.concat(patternsList);
+          }
 
-            if (typeof patternsList === 'array' || typeof patternsList === 'object') {
-                patternsArr = patternsArr.concat(patternsList);
-            }
-
-            chrome.storage.sync.set({
-                'patternsList': patternsArr
-            }, function(items) {
-                // TODO: fix the order of these functions,
-                // it currently matters... and it shouldn't
-                updateList(patternOptions, patternInput.value);
-                updateDict(PATTERNS, patternInput.value);
-                patternInput.value = '';
-            });
+          chrome.storage.sync.set({
+            'patternsList': patternsArr
+          }, (items) => {
+            // TODO: fix the order of these functions,
+            // it currently matters... and it shouldn't
+            this.updateList(this._patternOptions, this._patternInput.value);
+            this.updateDict(PATTERNS, this._patternInput.value);
+            this._patternInput.value = '';
+          });
         });
-    }
+      }
 
-    event.stopPropagation();
-});
+      event.stopPropagation();
+    });
 
-document.getElementById('patterns-minus').addEventListener('click', function() {
-    if (patternInput.value !== '') {
+
+    // pattern minus
+    document.getElementById('patterns-minus').addEventListener('click', () => {
+      if (this._patternInput.value !== '') {
         let patternsArr;
-        let patternsList = patternOptions.options;
+        let patternsList = this._patternOptions.options;
 
         for (let i = 0; i < patternsList.length; i++) {
-            if (patternsList[i].text.toLowerCase() === patternInput.value) {
-                delete PATTERNS[patternsList[i].dataset.index];
-                patternsList[i].remove();
-                break;
-            }
+          if (patternsList[i].text.toLowerCase() === this._patternInput.value) {
+            delete PATTERNS[patternsList[i].dataset.index];
+            patternsList[i].remove();
+            break;
+          }
         }
 
-        patternsArr = Array.apply(null, patternOptions.options).map(function(e) {
-            return e.text;
+        patternsArr = Array.apply(null, this._patternOptions.options).map((event) => {
+          return event.text;
         });
 
         chrome.storage.sync.set({
-            'patternsList': patternsArr
-        }, function(items) {
-            patternInput.value = '';
+          'patternsList': patternsArr
+        }, (items) => {
+          this._patternInput.value = '';
         });
-    }
+      }
 
-    event.stopPropagation();
-});
+      event.stopPropagation();
+    });
 
 
-// ------------------------------------------------------------------------
-// TODO: fix character encoding
-// should look into encodeURI (on sender) and decodeURI (on receiever)
-document.getElementById('patterns-test').addEventListener('click', function(event) {
-    if (patternInput.value !== '') {
+    // TODO: fix character encoding
+    // should look into encodeURI (on sender) and decodeURI (on receiever)
+    document.getElementById('patterns-test').addEventListener('click', (event) => {
+      if (this._patternInput.value !== '') {
         const href = event.target.parentNode.getAttribute('href');
         if (href) {
-            location.href = href + `?scheme=${escape(patternInput.value)}`;
-            event.preventDefault();
+          location.href = href + `?scheme=${escape(this._patternInput.value)}`;
+          event.preventDefault();
         }
-    }
-});
+      }
+    });
+  }
+
+  // ------------------------------------------------------------------------
+  _closeHandler(event) {
+    bs.css.addClass(this._containerPreferences, 'bs-invisible');
+  }
+
+  _focusHandler(event, isFocused) {
+    event.srcElement.dataset.isFocused = isFocused;
+    event.stopPropagation();
+  }
+
+}

@@ -9,40 +9,40 @@
  */
 
 
-// ------------------------------------------------------------------------
-//
-// Properties
-//
-// ------------------------------------------------------------------------
-const data = document.querySelectorAll('[data-localize]');
+class Localize {
+  // ------------------------------------------------------------------------
+  //
+  // Methods
+  //
+  // ------------------------------------------------------------------------
+  static run() {
+    const data = document.querySelectorAll('[data-localize]');
 
-
-
-// ------------------------------------------------------------------------
-//
-// Methods
-//
-// ------------------------------------------------------------------------
-(function() {
     for (let i in data) {
-        if (data.hasOwnProperty(i)) {
-            let obj = data[i];
-            let tag = obj.getAttribute('data-localize').toString();
+      if (data.hasOwnProperty(i)) {
+        let obj = data[i];
+        let tag = obj.getAttribute('data-localize').toString();
 
-            replace_i18n(obj, tag);
-        }
+        this.replace_i18n(obj, tag);
+      }
     }
-})();
+  }
 
-// ------------------------------------------------------------------------
-function replace_i18n(obj, tag) {
+  // ------------------------------------------------------------------------
+  static replace_i18n(obj, tag) {
     let msg = tag.replace(/__MSG_(.+)_/g, function(match, $1) {
-        return $1
-            ? chrome.i18n.getMessage($1)
-            : '';
+      return $1
+      ? chrome.i18n.getMessage($1)
+      : '';
     });
 
     if (msg != tag) {
-        obj.innerHTML = msg;
+      obj.innerHTML = msg;
     }
+  }
+
 }
+
+
+// immediately invoke
+Localize.run();
