@@ -48,7 +48,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding: 12vh 9vw;
+    padding: 15vh 10vw;
 
     display: flex;
     flex-wrap: wrap;
@@ -62,7 +62,7 @@
 }
 @media screen and (max-height: 768px){
     .preferences #inputs {
-        padding: 4vh 9vw;
+        padding: 5vh 10vw;
     }
 }
 @media screen and (max-width: 1100px){
