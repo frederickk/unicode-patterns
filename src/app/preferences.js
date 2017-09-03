@@ -35,6 +35,7 @@ class Preferences {
     this._fpreferences = new FPreferences([
       'patternsPalette',
       'isMonochrome',
+      'isForceWhiteBackground',
       'isRefresh',
       'refreshTiming',
       'patternsList',

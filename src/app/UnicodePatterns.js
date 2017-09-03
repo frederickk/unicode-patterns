@@ -142,7 +142,12 @@ class UnicodePatterns {
 
     if (index === 0) {
       // TODO: this is a little sloppy... but whatever
-      document.body.style.backgroundColor = col.value;
+      if (this._preferences.get('isForceWhiteBackground')) {
+        document.body.style.backgroundColor = '#fff';
+      }
+      else {
+        document.body.style.backgroundColor = col.value;
+      }
       return;
     }
     else if (index === 1) {

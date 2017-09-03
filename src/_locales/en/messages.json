@@ -25,6 +25,10 @@
         "message": "Defined",
         "description": "Preference: pre-defined colors via palettes.js"
     },
+    "extPrefWhiteBackground": {
+        "message": "White Background",
+        "description": "Preference: force white background"
+    },
     "extPrefMono": {
         "message": "Monochrome Palette",
         "description": "Preference: monochrome colors"

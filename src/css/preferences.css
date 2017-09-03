@@ -48,7 +48,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding: 16vw;
+    padding: 12vh 9vw;
 
     display: flex;
     flex-wrap: wrap;
@@ -62,9 +62,21 @@
 }
 @media screen and (max-height: 768px){
     .preferences #inputs {
-        padding: 4vw 16vw;
+        padding: 4vh 9vw;
     }
 }
+@media screen and (max-width: 1100px){
+    .preferences #inputs {
+        padding: 4vh 9vw;
+    }
+    .preferences #inputs [class^='bs-col']:not(:first-child) {
+      padding-left: 0.5rem;
+    }
+    .preferences #patternsPalette.list {
+      width: auto !important;
+    }
+}
+
 
 
 /*
@@ -131,7 +143,9 @@
     background-repeat: no-repeat;
     background-position: calc(100% - 20px) 50%, calc(100% - 10px) 50%, 100% 0;
 }
-
+.preferences #patternsPalette.list {
+  width: calc(80% - 0.5rem);
+}
 .preferences .list::-webkit-input-placeholder {
     font-family: 'Roboto Mono', monospace;
     font-size: 0.35rem;
