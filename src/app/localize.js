@@ -5,7 +5,6 @@
  * localize.js
  *
  * http://stackoverflow.com/questions/25467009/internationalization-of-html-pages-for-my-google-chrome-extension
- *
  */
 
 

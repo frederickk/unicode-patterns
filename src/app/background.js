@@ -9,8 +9,6 @@
  *
  * http://kenfrederick.de/
  * http://blog.kenfrederick.de/
- *
- *
  */
 
 

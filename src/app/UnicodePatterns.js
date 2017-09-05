@@ -10,6 +10,9 @@
  * http://kenfrederick.de/
  * http://blog.kenfrederick.de/
  *
+ *
+ * The main class for unicode-patterns
+ *
  * Requires
  * - Preferences.js
  */
@@ -68,8 +71,7 @@ class UnicodePatterns {
       }, isMonochrome);
     }
 
-
-    // and trigger refresh
+    // ...and trigger refresh
     this._refreshTiming = this._preferences.get('refreshTiming');
     this._triggerRefresh();
   }
@@ -188,7 +190,16 @@ class UnicodePatterns {
 
 
   // ------------------------------------------------------------------------
+  /**
+   * Read value from select#patternsTypeface
+   *
+   * @return {string} CSS value; default 'space'
+   */
   _getTypeface() {
+    let typeface = this._preferences.get('patternsTypeface');
+    if (typeface == null || typeface == undefined || typeface === '') {
+      this._preferences.set('patternsTypeface', 'space');
+    }
     return this._preferences.get('patternsTypeface');
   }
 
@@ -302,7 +313,7 @@ class UnicodePatterns {
         window.clearTimeout(this._mouseMoveTimeout);
       }
       else {
-        app.style.opacity = pref.style.opacity = 0.3;
+        app.style.opacity = pref.style.opacity = 1.0;
 
         if (this._mouseMoveTimeout !== undefined) {
           window.clearTimeout(this._mouseMoveTimeout);
@@ -316,7 +327,7 @@ class UnicodePatterns {
     document.getElementById('app-return').addEventListener('click', (event) => {
       event.preventDefault();
       chrome.tabs.update({
-        url:'chrome://apps'
+        url: 'chrome://apps'
       });
     });
 
