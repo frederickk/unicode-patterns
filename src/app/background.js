@@ -7,20 +7,36 @@
  * Ken Frederick
  * ken.frederick@gmx.de
  *
- * http://kennethfrederick.de/
- * http://blog.kennethfrederick.de/
- *
- *
+ * http://kenfrederick.de/
+ * http://blog.kenfrederick.de/
  */
 
 
-// ------------------------------------------------------------------------
-//
-// Methods
-//
-// ------------------------------------------------------------------------
-function init(event) {
+class Background {
+  // ------------------------------------------------------------------------
+  //
+  // Constructor
+  //
+  // ------------------------------------------------------------------------
+  constructor(event) {
+    chrome.runtime.onInstalled.addListener((event) => {
+      this._init(event);
+    });
+  }
+
+
+
+  // ------------------------------------------------------------------------
+  //
+  // Methods
+  //
+  // ------------------------------------------------------------------------
+  _init(event) {
+
+  }
+
 }
 
-// ------------------------------------------------------------------------
-chrome.runtime.onInstalled.addListener(init);
+
+// immediately invoke
+new Background();

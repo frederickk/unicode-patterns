@@ -1,71 +1,75 @@
 {
-    "extName": {
-        "message": "Unicode Patterns",
-        "description": "Extension name"
-    },
-    "extDesc": {
-        "message": "Replace new tab page with generated Unicode text patterns.",
-        "description": "Extension description"
-    },
+  "extName": {
+    "message": "Unicode Patterns",
+    "description": "Extension name"
+  },
+  "extDesc": {
+    "message": "Replace new tab page with generated Unicode text patterns.",
+    "description": "Extension description"
+  },
 
-    "extPref": {
-        "message": "Preferences",
-        "description": ""
-    },
+  "extPref": {
+    "message": "Preferences",
+    "description": ""
+  },
 
-    "extPrefPalette": {
-        "message": "Palette Source",
-        "description": "Preference: palette source"
-    },
-    "extPrefPaletteGenerative": {
-        "message": "Generative",
-        "description": "Preference: generative colors via http://www.thecolorapi.com/"
-    },
-    "extPrefPaletteDefined": {
-        "message": "Defined",
-        "description": "Preference: pre-defined colors via palettes.js"
-    },
-    "extPrefMono": {
-        "message": "Monochrome Palette",
-        "description": "Preference: monochrome colors"
-    },
+  "extPrefPalette": {
+    "message": "Palette Source",
+    "description": "Preference: palette source"
+  },
+  "extPrefPaletteGenerative": {
+    "message": "Generative",
+    "description": "Preference: generative colors via http://www.thecolorapi.com/"
+  },
+  "extPrefPaletteDefined": {
+    "message": "Defined",
+    "description": "Preference: pre-defined colors via palettes.json"
+  },
+  "extPrefWhiteBackground": {
+    "message": "White Background",
+    "description": "Preference: force white background"
+  },
+  "extPrefMono": {
+    "message": "Monochrome Palette",
+    "description": "Preference: monochrome colors"
+  },
 
-    "extPrefCustom": {
-        "message": "Pattern Scheme",
-        "description": "Preference: custom pattern scheme"
-    },
-    "extPrefAdd": {
-        "message": "Add",
-        "description": "Preference: add"
-    },
-    "extPrefRemove": {
-        "message": "Remove",
-        "description": "Preference: remove"
-    },
+  "extPrefCustom": {
+    "message": "Pattern Scheme",
+    "description": "Preference: custom pattern scheme"
+  },
+  "extPrefAdd": {
+    "message": "Add",
+    "description": "Preference: add"
+  },
+  "extPrefRemove": {
+    "message": "Remove",
+    "description": "Preference: remove"
+  },
 
-    "extPrefRefresh": {
-        "message": "Auto refresh",
-        "description": "Preference: refresh pattern"
-    },
-    "extPrefRefreshTiming": {
-        "message": "Refresh delay",
-        "description": "Preference: refresh timing for patterns"
-    },
-    "extPrefRefreshTimingUnit": {
-        "message": "seconds",
-        "description": "Preference: refresh delay time unit"
-    },
+  "extPrefRefresh": {
+    "message": "Auto refresh",
+    "description": "Preference: refresh pattern"
+  },
+  "extPrefRefreshTiming": {
+    "message": "Refresh delay",
+    "description": "Preference: refresh timing for patterns"
+  },
+  "extPrefRefreshTimingUnit": {
+    "message": "seconds",
+    "description": "Preference: refresh delay time unit"
+  },
 
-    "extPrefPatternSchemes": {
-        "message": "Manage custom pattern schemes",
-        "description": "Preference: pattern schemes"
-    },
-    "extPrefPatternTest": {
-        "message": "scheme preview",
-        "description": "Preference: URL to tryout pattern scheme"
-    },
-    "extPrefPatternTypeface": {
-        "message": "Pattern typeface",
-        "description": "Preference: typeface for patterns"
-    }
+  "extPrefPatternSchemes": {
+    "message": "Manage custom pattern schemes",
+    "description": "Preference: pattern schemes"
+  },
+  "extPrefPatternTest": {
+    "message": "scheme preview",
+    "description": "Preference: URL to tryout pattern scheme"
+  },
+  "extPrefPatternTypeface": {
+    "message": "Pattern typeface",
+    "description": "Preference: typeface for patterns"
+  }
 }
