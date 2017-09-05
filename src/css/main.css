@@ -7,16 +7,13 @@
  *
  * http://kenfrederick.de/
  * http://blog.kenfrederick.de/
- *
- *
  */
 
 
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
-@import url('https://fonts.googleapis.com/css?family=Space+Mono');
-@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Space+Mono|Material+Icons');
+@import url('../typefaces/evolventa/evolventa.css');
 @import url('../typefaces/unscii/unscii.css');
+
 
 /*
  *
@@ -25,49 +22,49 @@
  */
 body,
 html {
-    overflow: hidden;
-    font-size: 6vh;
-    text-align: center;
+  overflow: hidden;
+  font-size: 6vh;
+  text-align: center;
 
-    /*font-family: 'Anonymous Pro', monospace;*/
-    /*font-family: 'Space Mono', monospace;*/
-    font-family: 'Roboto Mono', monospace;
-    /*font-family: 'Unscii';*/
+  /*font-family: 'Anonymous Pro', monospace;*/
+  /*font-family: 'Space Mono', monospace;*/
+  font-family: 'Roboto Mono', monospace;
+  /*font-family: 'Unscii';*/
 }
 @media screen and (max-height: 768px){
-    body,
-    html {
-        font-size: 46px;
-    }
+  body,
+  html {
+    font-size: 46px;
+  }
 }
 
 
 a {
-    color: #fff;
+  color: #fff;
 }
 a.no-underline {
-    text-decoration: none;
+  text-decoration: none;
 }
 a:hover {
-    color: #9e9e9e;
+  color: rgba(0, 0, 0, 0.65);
 }
 a:active {
-    color: #000;
+  color: #000;
 }
 
 
 sub {
-    padding-top: 0.25rem;
-    display: block;
-    font-size: 0.25rem;
+  padding-top: 0.25rem;
+  display: block;
+  font-size: 0.25rem;
 }
 
 
 .bs-row {
-    width: 100%;
+  width: 100%;
 }
 .bs-row:not(:first-child) {
-    padding-top: 2rem;
+  padding-top: 2rem;
 }
 
 
@@ -77,18 +74,23 @@ sub {
  * Patterns
  *
  */
-.roboto {
-    font-family: 'Roboto Mono';
-}
-.unscii {
-    font-family: 'Unscii';
-    -webkit-font-smoothing: none;
-}
 .cutive {
-    font-family: 'Cutive Mono';
+  font-family: 'Cutive Mono';
+}
+.evolventa {
+  width: 1em;
+
+  font-family: 'Evolventa';
+}
+.roboto {
+  font-family: 'Roboto Mono';
 }
 .space {
-    font-family: 'Space Mono';
+  font-family: 'Space Mono';
+}
+.unscii {
+  font-family: 'Unscii';
+  -webkit-font-smoothing: none;
 }
 
 
@@ -98,43 +100,43 @@ sub {
  *
  */
 .pattern-char {
-    /*white-space: pre;*/
-    display: inline-block;
-    text-align: center;
+  /*white-space: pre;*/
+  display: inline-block;
+  text-align: center;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 2.222%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 2.222%;
 
-    /*animation-duration: 10000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;*/
+  /*animation-duration: 10000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;*/
 
-    -webkit-transition: opacity 350ms ease-in-out;
-    transition: opacity 350ms ease-in-out;
+  -webkit-transition: opacity 350ms ease-in-out;
+  transition: opacity 350ms ease-in-out;
 }
 .pattern-char:nth-child(1n) {
-    color: transparent; /* #f00; */
+  color: transparent; /* #f00; */
 }
 .pattern-char:nth-child(2n) {
-    color: transparent; /* gold; */
+  color: transparent; /* gold; */
 }
 .pattern-char:nth-child(3n) {
-    color: transparent; /* #00f; */
+  color: transparent; /* #00f; */
 }
 
 
 #pattern-container {
-    position: absolute;
-    top: -4vh;
-    display: flex;
-    flex-flow: row wrap;
+  position: absolute;
+  top: -4vh;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 #forms {
-    display: none;
+  display: none;
 }
 
 
@@ -146,91 +148,98 @@ sub {
  */
 #app-svg-color,
 #preferences-svg-color {
-    width: 22px;
-    height: 22px;
+  width: 20px;
+  height: 20px;
 }
 #app-svg-color,
 #preferences-svg-color {
-    fill: #000;
+  /*fill: #000;*/
 }
 
 .bookmarks-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    padding: 0;
-    margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  margin: 0;
 
-    z-index: 1000;
+  z-index: 1000;
 }
 
 .bookmarks-bar .button {
-    position: relative;
-    top: 9px;
-    left: 8px;
-    /*min-width: 64px;*/
-    height: 22px;
-    margin: 0 9px 0 0;
+  position: relative;
+  top: 9px;
+  left: 8px;
+  /*min-width: 64px;*/
+  height: 24px;
+  margin: 0 9px 0 0;
+  padding: 0 0.6em;
 
-    float: left;
+  background-color: #fff;
+  border-radius: 24px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  float: left;
+  font-size: 11.5px;
+  line-height: 24px;
+  transition: all 200ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+}
+.bookmarks-bar .button,
+.bookmarks-bar .button path {
+  color: rgba(0, 0, 0, 0.65);
+  fill: rgba(0, 0, 0, 0.65);
+}
+.bookmarks-bar .button:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 
-    font-size: 11.5px;
-    line-height: 22px;
-
-    background-color: rgba(230, 230, 230, 0.9);
-    border: rgba(230, 230, 230, 0.9) 1px solid;
-    border-radius: 3px;
-
-    transition: all 200ms ease-in-out;
-    -webkit-transition: all 200ms ease-in-out;
 }
 .bookmarks-bar #app-return *,
 .bookmarks-bar #preferences-return * {
-    cursor: pointer;
+  cursor: pointer;
 }
 .bookmarks-bar #app-return,
 .bookmarks-bar #preferences-return {
-    opacity: 0.0;
+  opacity: 0.0;
 }
 
 .bookmarks-bar #app-return:hover,
 .bookmarks-bar #preferences-return:hover {
-    opacity: 1.0;
+  opacity: 1.0;
 }
 
 .bookmarks-bar .label {
-    position: relative;
-    top: 0;
-    left: 4px;
-    height: 22px;
-    padding: 0;
-    margin-right: 9px;
-    display: inline-block;
-    font-family: sans-serif;
-    font-size: 11.5px;
-    font-weight: bold;
-    line-height: 22px;
-    text-align: left;
-    user-select: none;
+  position: relative;
+  top: 0;
+  left: 4px;
+  height: 24px;
+  padding: 0;
+  margin-right: 9px;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 11.5px;
+  font-weight: bold;
+  line-height: 24px;
+  text-align: left;
+  user-select: none;
 }
 .bookmarks-bar .icon {
-    position: relative;
-    top: 0;
-    left: 2px;
-    width: 22px;
-    height: 22px;
-    /*padding: 0 0 0 5px;*/
-    float: left;
+  position: relative;
+  top: 2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  /*padding: 0 0 0 5px;*/
+  float: left;
 }
 
 .noselect {
-    cursor: default;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    user-select: none;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
 }
 
 
@@ -241,38 +250,38 @@ sub {
  *
  */
 @keyframes ani-rotate-clockwise {
-    0% {
-        transform: rotate(0deg);
-        /*transform: rotate3d(0, 0, 1, 0deg);*/
-    }
-    33% {
-        transform: rotate(120deg);
-        /*transform: rotate3d(0, 0, 1, 120deg);*/
-    }
-    66% {
-        transform: rotate(240deg);
-        /*transform: rotate3d(0, 0, 1, 240deg);*/
-    }
-    100% {
-        transform: rotate(360deg);
-        /*transform: rotate3d(0, 0, 1, 360deg);*/
-    }
+  0% {
+    transform: rotate(0deg);
+    /*transform: rotate3d(0, 0, 1, 0deg);*/
+  }
+  33% {
+    transform: rotate(120deg);
+    /*transform: rotate3d(0, 0, 1, 120deg);*/
+  }
+  66% {
+    transform: rotate(240deg);
+    /*transform: rotate3d(0, 0, 1, 240deg);*/
+  }
+  100% {
+    transform: rotate(360deg);
+    /*transform: rotate3d(0, 0, 1, 360deg);*/
+  }
 }
 @keyframes ani-rotate-counter-clockwise {
-    0% {
-        transform: rotate(0deg);
-        /*transform: rotate3d(0, 0, 1, 0deg);*/
-    }
-    33% {
-        transform: rotate(-120deg);
-        /*transform: rotate3d(0, 0, 1, -120deg);*/
-    }
-    66% {
-        transform: rotate(-240deg);
-        /*transform: rotate3d(0, 0, 1, -240deg);*/
-    }
-    100% {
-        transform: rotate(-360deg);
-        /*transform: rotate3d(0, 0, 1, -360deg);*/
-    }
+  0% {
+    transform: rotate(0deg);
+    /*transform: rotate3d(0, 0, 1, 0deg);*/
+  }
+  33% {
+    transform: rotate(-120deg);
+    /*transform: rotate3d(0, 0, 1, -120deg);*/
+  }
+  66% {
+    transform: rotate(-240deg);
+    /*transform: rotate3d(0, 0, 1, -240deg);*/
+  }
+  100% {
+    transform: rotate(-360deg);
+    /*transform: rotate3d(0, 0, 1, -360deg);*/
+  }
 }
