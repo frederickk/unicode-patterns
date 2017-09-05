@@ -1,75 +1,75 @@
 {
-    "extName": {
-        "message": "Unicode Patterns",
-        "description": "Extension name"
-    },
-    "extDesc": {
-        "message": "„Neuer Tab“-Seite mit einem generierten Muster aus Unicode Text ersetzen.",
-        "description": "Extension description"
-    },
+  "extName": {
+    "message": "Unicode Patterns",
+    "description": "Extension name"
+  },
+  "extDesc": {
+    "message": "„Neuer Tab“-Seite mit einem generierten Muster aus Unicode Text ersetzen.",
+    "description": "Extension description"
+  },
 
-    "extPref": {
-        "message": "Einstellungen",
-        "description": ""
-    },
+  "extPref": {
+    "message": "Einstellungen",
+    "description": ""
+  },
 
-    "extPrefPalette": {
-        "message": "Farbart",
-        "description": "Preference: palette source"
-    },
-    "extPrefPaletteGenerative": {
-        "message": "Generativ",
-        "description": "Preference: generative colors via http://www.thecolorapi.com/"
-    },
-    "extPrefPaletteDefined": {
-        "message": "Definiert",
-        "description": "Preference: pre-defined colors via palettes.js"
-    },
-    "extPrefWhiteBackground": {
-        "message": "Weißer Hintergrund",
-        "description": "Preference: force white background"
-    },
-    "extPrefMono": {
-        "message": "Monochromatische Farben",
-        "description": "Preference: monochrome colors"
-    },
+  "extPrefPalette": {
+    "message": "Farbart",
+    "description": "Preference: palette source"
+  },
+  "extPrefPaletteGenerative": {
+    "message": "Generativ",
+    "description": "Preference: generative colors via http://www.thecolorapi.com/"
+  },
+  "extPrefPaletteDefined": {
+    "message": "Definiert",
+    "description": "Preference: pre-defined colors via palettes.json"
+  },
+  "extPrefWhiteBackground": {
+    "message": "Weißer Hintergrund",
+    "description": "Preference: force white background"
+  },
+  "extPrefMono": {
+    "message": "Monochromatische Farben",
+    "description": "Preference: monochrome colors"
+  },
 
-    "extPrefCustom": {
-        "message": "Muster Schema",
-        "description": "Preference: custom pattern scheme"
-    },
-    "extPrefAdd": {
-        "message": "Hinzufügen",
-        "description": "Preference: add"
-    },
-    "extPrefRemove": {
-        "message": "Löschen",
-        "description": "Preference: remove"
-    },
+  "extPrefCustom": {
+    "message": "Muster Schema",
+    "description": "Preference: custom pattern scheme"
+  },
+  "extPrefAdd": {
+    "message": "Hinzufügen",
+    "description": "Preference: add"
+  },
+  "extPrefRemove": {
+    "message": "Löschen",
+    "description": "Preference: remove"
+  },
 
-    "extPrefRefresh": {
-        "message": "Muster Aktualisieren",
-        "description": "Preference: refresh pattern"
-    },
-    "extPrefRefreshTiming": {
-        "message": "Muster Aktualisierungsrate",
-        "description": "Preference: refresh timing for patterns"
-    },
-    "extPrefRefreshTimingUnit": {
-        "message": "Sekunden",
-        "description": "Preference: refresh delay time unit"
-    },
+  "extPrefRefresh": {
+    "message": "Muster Aktualisieren",
+    "description": "Preference: refresh pattern"
+  },
+  "extPrefRefreshTiming": {
+    "message": "Muster Aktualisierungsrate",
+    "description": "Preference: refresh timing for patterns"
+  },
+  "extPrefRefreshTimingUnit": {
+    "message": "Sekunden",
+    "description": "Preference: refresh delay time unit"
+  },
 
-    "extPrefPatternSchemes": {
-        "message": "Individualisierte Muster Schemen verwalten",
-        "description": "Preference: pattern schemes"
-    },
-    "extPrefPatternTest": {
-        "message": "Schema Vorschau",
-        "description": "Preference: URL to tryout pattern scheme"
-    },
-    "extPrefPatternTypeface": {
-        "message": "Muster Schrift",
-        "description": "Preference: typeface for patterns"
-    }
+  "extPrefPatternSchemes": {
+    "message": "Individualisierte Muster Schemen verwalten",
+    "description": "Preference: pattern schemes"
+  },
+  "extPrefPatternTest": {
+    "message": "Schema Vorschau",
+    "description": "Preference: URL to tryout pattern scheme"
+  },
+  "extPrefPatternTypeface": {
+    "message": "Muster Schrift",
+    "description": "Preference: typeface for patterns"
+  }
 }
