@@ -212,6 +212,28 @@ class FPreferences {
   // }
 
   /**
+   * Set value of element, from this.selectors object
+   *
+   * @param {string} id
+   * @param {string|boolean|number|null} val
+   */
+  set(id, val) {
+    if (this.selectors[id].type === 'checkbox') {
+      this.selectors[id].checked = val;
+    }
+    // TODO: is this necessary?
+    else if (this.selectors[id].type === 'select') {
+      this.selectors[id].options[this.selectors[id].selectedIndex].value = val;
+    }
+    else {
+      this.selectors[id].value = val;
+    }
+
+  }
+
+
+  // ------------------------------------------------------------------------
+  /**
    * Get value of element
    * TODO: what is the functional difference between this and this.get(id)?
    * one or the other seems redundant... tsk tsk
@@ -246,7 +268,6 @@ class FPreferences {
   }
 
 
-  // ------------------------------------------------------------------------
   /**
    * Get value of element, from this.selectors object
    *

@@ -2,7 +2,7 @@
 
 /**!
  * unicode-patterns
- * Preferences.js
+ * preferences.js
  *
  * Ken Frederick
  * ken.frederick@gmx.de
@@ -89,8 +89,12 @@ class Preferences {
 
   updateTypefaceInfo(val) {
     let info = document.getElementById('patternsTypefaceInfo');
-    if (val === 'unscii') {
-      info.href = 'http://pelulamu.net/unscii/';
+
+    if (val === 'cutive') {
+      info.href = 'https://fonts.google.com/specimen/Cutive+Mono';
+    }
+    else if (val === 'product') {
+      info.href = 'https://fonts.google.com/specimen/Producto+Sans';
     }
     else if (val === 'roboto') {
       info.href = 'https://fonts.google.com/specimen/Roboto+Mono';
@@ -98,9 +102,15 @@ class Preferences {
     else if (val === 'space') {
       info.href = 'https://fonts.google.com/specimen/Space+Mono';
     }
-    else if (val === 'cutive') {
-      info.href = 'https://fonts.google.com/specimen/Cutive+Mono';
+    else if (val === 'unscii') {
+      info.href = 'http://pelulamu.net/unscii/';
     }
+  }
+
+
+  // ------------------------------------------------------------------------
+  set(id, val) {
+    this._fpreferences.set(id, val);
   }
 
   get(id) {
@@ -212,7 +222,7 @@ class Preferences {
     });
 
 
-    // pattern minus
+    // button for handling custom pattern removal
     document.getElementById('patterns-minus').addEventListener('click', () => {
       if (this._patternInput.value !== '') {
         let patternsArr;
