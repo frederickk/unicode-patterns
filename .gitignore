@@ -12,6 +12,8 @@ Thumbs.db
 # Compiled source #
 ###################
 *.app
+*.crx
+*.zip
 
 # Folders #
 ###################
