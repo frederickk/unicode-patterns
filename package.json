@@ -1,6 +1,6 @@
 {
   "name": "unicode-patterns",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "Replace new tab page with generated Unicode text patterns",
   "main": "src/newtab.html",
   "scripts": {
@@ -18,9 +18,9 @@
     "ascii art"
   ],
   "author": {
-      "name": "Ken Frederick",
-      "email": "ken.frederick@gmx.de",
-      "url": "https://kenfrederick.de/"
+    "name": "Ken Frederick",
+    "email": "ken.frederick@gmx.de",
+    "url": "https://kenfrederick.de/"
   },
   "license": "MIT"
 }
