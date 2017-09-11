@@ -304,6 +304,10 @@ class UnicodePatterns {
       this._init();
     }, false);
 
+    window.addEventListener('beforeunload', (event) => {
+      this._container.classList.add('bs-invisible');
+    });
+
     window.addEventListener('mousemove', (event) => {
       const app = document.getElementById('app-return');
       const pref = document.getElementById('preferences-return');
