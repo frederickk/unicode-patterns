@@ -300,13 +300,30 @@ class UnicodePatterns {
   //
   // ------------------------------------------------------------------------
   _initEvents() {
+    function mouseOverHandler(event) {
+      this.dataset.hover = 'true';
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    function mouseOutHandler(event) {
+      this.dataset.hover = null;
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    const unloadHandler = (event) => {
+      document.getElementById('preferences').classList.add('bs-invisible');
+      this._container.classList.add('bs-invisible');
+    };
+
+
     window.addEventListener('FPreferencesLoaded', () => {
       this._init();
     }, false);
 
-    window.addEventListener('beforeunload', (event) => {
-      this._container.classList.add('bs-invisible');
-    });
+    window.addEventListener('beforeunload', unloadHandler);
+    window.addEventListener('unload', unloadHandler);
 
     window.addEventListener('mousemove', (event) => {
       const app = document.getElementById('app-return');
@@ -335,25 +352,11 @@ class UnicodePatterns {
       });
     });
 
-    document.getElementById('app-return').addEventListener('mouseover', this._mouseOverHandler);
-    document.getElementById('preferences-return').addEventListener('mouseover', this._mouseOverHandler);
+    document.getElementById('app-return').addEventListener('mouseover', mouseOverHandler);
+    document.getElementById('preferences-return').addEventListener('mouseover', mouseOverHandler);
 
-    document.getElementById('app-return').addEventListener('mouseout', this._mouseOutHandler);
-    document.getElementById('preferences-return').addEventListener('mouseout', this._mouseOutHandler);
-  }
-
-  // ------------------------------------------------------------------------
-  // TODO: feels a bit bootleg and functionality is a bit janky
-  _mouseOverHandler(event) {
-    this.dataset.hover = 'true';
-    event.preventDefault();
-    event.stopPropagation();
-  }
-
-  _mouseOutHandler(event) {
-    this.dataset.hover = null;
-    event.preventDefault();
-    event.stopPropagation();
+    document.getElementById('app-return').addEventListener('mouseout', mouseOutHandler);
+    document.getElementById('preferences-return').addEventListener('mouseout', mouseOutHandler);
   }
 
 }
