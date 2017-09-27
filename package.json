@@ -1,6 +1,6 @@
 {
   "name": "unicode-patterns",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "Replace new tab page with generated Unicode text patterns",
   "main": "src/newtab.html",
   "scripts": {

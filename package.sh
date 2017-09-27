@@ -14,7 +14,7 @@ find . -type f -name './src/*.DS_Store' -ls -delete
 # $ ./package.sh foo firefox
 if [ $PLATFORM = 'firefox' ] || [ $PLATFORM = 'all' ]; then
   rm ./$NAME.xpi
-  7z a $NAME.xpi ./src
+  7z a $NAME.xpi ./src/*
 fi
 
 # package for Chrome
