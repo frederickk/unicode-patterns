@@ -154,7 +154,7 @@ class Preferences {
     });
     this._paletteSource.addEventListener('change', (event) => {
       this._focusHandler(event, false);
-      let val = bs.html.getSelectValue(this).value;
+      let val = bs.html.getSelectValue(event.srcElement).value;
 
       chrome.storage.sync.set({
         'patternsPalette': val
