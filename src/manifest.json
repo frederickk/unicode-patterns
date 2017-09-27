@@ -1,25 +1,25 @@
 {
-    "manifest_version": 2,
-    "name": "__MSG_extName__",
-    "version": "0.7.6",
+  "manifest_version": 2,
+  "name": "__MSG_extName__",
+  "version": "0.7.7",
 
-    "description": "__MSG_extDesc__",
-    "default_locale": "en",
-    "icons": {
-        "128": "icon-128.png",
-        "48": "icon-48.png",
-        "16": "icon-16.png"
-    },
+  "description": "__MSG_extDesc__",
+  "default_locale": "en",
+  "icons": {
+    "128": "icon-128.png",
+    "48": "icon-48.png",
+    "16": "icon-16.png"
+  },
 
-    "author": "Ken Frederick",
+  "author": "Ken Frederick",
 
-    "chrome_url_overrides": {
-        "newtab": "newtab.html"
-    },
-    
-    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
-    "offline_enabled": true,
-    "permissions": [
-        "storage"
-    ]
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
+  "offline_enabled": true,
+  "permissions": [
+    "storage"
+  ]
 }
