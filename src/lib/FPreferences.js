@@ -47,7 +47,7 @@ class FPreferences {
       this.selectors[val] = document.getElementById(val);
 
       let inputHandler = (event) => {
-        let self = event.srcElement;
+        let self = event.srcElement || event.target;
 
         this._getElementValue(self, (val) => {
           this.storage[self.id] = val;
