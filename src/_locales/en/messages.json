@@ -23,7 +23,7 @@
   },
   "extPrefPaletteDefined": {
     "message": "Defined",
-    "description": "Preference: pre-defined colors via palettes.json"
+    "description": "Preference: pre-defined colors via palettes.js"
   },
   "extPrefWhiteBackground": {
     "message": "White Background",

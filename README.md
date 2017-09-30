@@ -12,6 +12,30 @@ Install via [Chrome Web Store](https://chrome.google.com/webstore/detail/unicode
 
 
 
+Packaging
+-------------
+
+Package for all platforms (Chrome and Firefox)
+
+```
+$ npm run package
+```
+
+
+*Firefox*
+
+```
+$ npm run package:firefox
+```
+
+[7-Zip](http://www.7-zip.org/) is required when building for Firefox
+
+```
+$ brew install p7zip
+```
+
+
+
 License
 -------------
 The MIT License (MIT)
