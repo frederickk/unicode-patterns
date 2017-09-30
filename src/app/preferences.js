@@ -154,7 +154,8 @@ class Preferences {
     });
     this._paletteSource.addEventListener('change', (event) => {
       this._focusHandler(event, false);
-      let val = bs.html.getSelectValue(event.srcElement).value;
+      let self = event.srcElement || event.target;
+      let val = bs.html.getSelectValue(self).value;
 
       chrome.storage.sync.set({
         'patternsPalette': val
@@ -177,7 +178,8 @@ class Preferences {
     });
     this._patternTypeface.addEventListener('change', (event) => {
       this._focusHandler(event, false);
-      let val = bs.html.getSelectValue(event.srcElement).value;
+      let self = event.srcElement || event.target;
+      let val = bs.html.getSelectValue(self).value;
 
       this.updateTypefaceInfo(val);
 
@@ -270,7 +272,8 @@ class Preferences {
   }
 
   _focusHandler(event, isFocused) {
-    event.srcElement.dataset.isFocused = isFocused;
+    let self = event.srcElement || event.target;
+    self.dataset.isFocused = isFocused;
     event.stopPropagation();
   }
 
