@@ -23,4 +23,4 @@ Thumbs.db
 
 # Files #
 ###################
-unicode-patterns.pem
+*.pem
