@@ -18,14 +18,14 @@ Packaging
 Package for all platforms (Chrome and Firefox)
 
 ```
-$ npm run build:package
+$ npm run package
 ```
 
 
 *Firefox*
 
 ```
-$ npm run build:package:firefox
+$ npm run package:firefox
 ```
 
 [7-Zip](http://www.7-zip.org/) is required when building for Firefox
