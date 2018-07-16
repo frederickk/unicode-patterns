@@ -1,7 +1,7 @@
 /*
  * https://github.com/evolventa/evolventa
  *
- * 
+ *
  * Copyright © 2016 by Alex I. Kuznetsov.
  *
  * These fonts are free software. You are allowed to distribute and/or modify
@@ -26,7 +26,7 @@
   font-weight: 400;
   src: local('Evolventa'),
        local('Evolventa-Regular'),
-       url('./Evolventa-Regular.ttf')  format('truetype'),
+       url('./Evolventa-Regular.ttf') format('truetype'),
        url('./Evolventa-Regular.otf') format('opentype'),
        url('./Evolventa-Regular.woff');
 }

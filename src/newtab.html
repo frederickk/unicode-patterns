@@ -1,128 +1,118 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
 
-        <link href="./css/normalize.css" rel="stylesheet" type="text/css">
-        <link href="./css/bslib.min.css" rel="stylesheet" type="text/css">
-        <link href="./css/main.css" rel="stylesheet" type="text/css">
-        <link href="./css/preferences.css" rel="stylesheet" type="text/css">
-    </head>
-    <body class="bs-ani-all">
+    <title></title>
 
-        <div id="pattern-container" class="bs-row bs-non-interactive"></div>
+    <meta name="author" content="Ken Frederick">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width, height=device-height">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <link href="./index.min.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="ani-all">
+    <div id="pattern-container" class="pattern-container row non-interactive"></div>
+
+    <!-- Google Bookmarks Bar -->
+    <div id="bookmarks-bar" class="bookmarks-bar noselect">
+      <div id="app-return" class="button">
+        <div id="app-icon" class="icon noselect">
+          <svg id="app-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 44 44">
+            <path id="app-svg-color" d="M35,14h-6V8h6V14z M25,8h-6v6h6V8z M15,8H9v6h6V8z M35,18h-6v6h6V18z M25,18h-6v6h6V18z M15,18H9v6h6V18z M35,28h-6v6h6V28z M25,28h-6v6h6V28z M15,28H9v6h6V28z"/>
+          </svg>
+        </div>
+        <div class="label noselect">Apps</div>
+      </div>
+
+      <div id="preferences-return" class="button">
+        <div id="preferences-icon" class="icon noselect">
+          <svg id="preferences-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 44 44">
+            <path id="preferences-svg-color" d="M33.1,23.5c0.1-0.5,0.1-1,0.1-1.5c0-0.5-0.1-1-0.1-1.5l3.2-2.4c0.2-0.2,0.3-0.7,0.2-1l-3-5.1c-0.2-0.3-0.6-0.4-0.9-0.3 l-3.8,1.5c-0.8-0.6-1.6-1.1-2.5-1.5l-0.6-4C25.6,7.3,25.4,7,24.9,7h-6c-0.4,0-0.7,0.2-0.7,0.7l-0.6,4c-0.9,0.4-1.7,0.9-2.5,1.5 l-3.7-1.5c-0.3-0.2-0.7,0-0.9,0.3l-3,5.1c-0.2,0.3-0.1,0.7,0.2,1l3.2,2.4c-0.1,0.5-0.1,1-0.1,1.5c0,0.5,0.1,1,0.1,1.5l-3.2,2.4 c-0.2,0.2-0.3,0.7-0.2,1l3,5.1c0.2,0.3,0.6,0.4,0.9,0.3l3.8-1.5c0.8,0.6,1.6,1.1,2.5,1.5l0.6,4c0.1,0.3,0.3,0.7,0.7,0.7h6 c0.4,0,0.7-0.2,0.7-0.7l0.6-4c0.9-0.4,1.7-0.9,2.5-1.5l3.7,1.5c0.3,0.2,0.7,0,0.9-0.3l3-5.1c0.2-0.3,0.1-0.7-0.2-1L33.1,23.5z M22,27.2c-2.9,0-5.2-2.4-5.2-5.2s2.4-5.2,5.2-5.2s5.2,2.4,5.2,5.2S24.9,27.2,22,27.2z"/>
+          </svg>
+        </div>
+        <div class="label noselect" data-localize="__MSG_extPref_">Preferences</div>
+      </div>
+    </div>
 
 
-        <!-- Google Bookmarks Bar -->
-        <div id="bookmarks-bar" class="bookmarks-bar noselect">
-            <div id="app-return" class="button">
-                <div id="app-icon" class="icon noselect">
-                    <svg id="app-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 44 44">
-                        <path id="app-svg-color" d="M35,14h-6V8h6V14z M25,8h-6v6h6V8z M15,8H9v6h6V8z M35,18h-6v6h6V18z M25,18h-6v6h6V18z M15,18H9v6h6V18z M35,28h-6v6h6V28z M25,28h-6v6h6V28z M15,28H9v6h6V28z"/>
-                    </svg>
-                </div>
-                <div class="label noselect">Apps</div>
-            </div>
-
-            <div id="preferences-return" class="button">
-                <div id="preferences-icon" class="icon noselect">
-                    <svg id="preferences-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 44 44">
-                        <path id="preferences-svg-color" d="M33.1,23.5c0.1-0.5,0.1-1,0.1-1.5c0-0.5-0.1-1-0.1-1.5l3.2-2.4c0.2-0.2,0.3-0.7,0.2-1l-3-5.1c-0.2-0.3-0.6-0.4-0.9-0.3 l-3.8,1.5c-0.8-0.6-1.6-1.1-2.5-1.5l-0.6-4C25.6,7.3,25.4,7,24.9,7h-6c-0.4,0-0.7,0.2-0.7,0.7l-0.6,4c-0.9,0.4-1.7,0.9-2.5,1.5 l-3.7-1.5c-0.3-0.2-0.7,0-0.9,0.3l-3,5.1c-0.2,0.3-0.1,0.7,0.2,1l3.2,2.4c-0.1,0.5-0.1,1-0.1,1.5c0,0.5,0.1,1,0.1,1.5l-3.2,2.4 c-0.2,0.2-0.3,0.7-0.2,1l3,5.1c0.2,0.3,0.6,0.4,0.9,0.3l3.8-1.5c0.8,0.6,1.6,1.1,2.5,1.5l0.6,4c0.1,0.3,0.3,0.7,0.7,0.7h6 c0.4,0,0.7-0.2,0.7-0.7l0.6-4c0.9-0.4,1.7-0.9,2.5-1.5l3.7,1.5c0.3,0.2,0.7,0,0.9-0.3l3-5.1c0.2-0.3,0.1-0.7-0.2-1L33.1,23.5z M22,27.2c-2.9,0-5.2-2.4-5.2-5.2s2.4-5.2,5.2-5.2s5.2,2.4,5.2,5.2S24.9,27.2,22,27.2z"/>
-                    </svg>
-                </div>
-                <div class="label noselect" data-localize="__MSG_extPref_">Preferences</div>
-            </div>
-
+    <!-- preferences -->
+    <div id="preferences" class="preferences ani-all invisible">
+      <div id="inputs" class="inputs">
+        <div class="row align-left">
+          <div class="col-1">
+            <label class="ani-all">
+              <select id="patternsPalette" class="list">
+                <option value="random" data-localize="__MSG_extPrefPaletteDefined_" selected>Defined</option>
+                <option value="generative" data-localize="__MSG_extPrefPaletteGenerative_">Generative</option>
+              </select>
+              <span id="patternsPaletteLabelText" class="non-interactive" data-localize="__MSG_extPrefPalette_">Pallete Source</span>
+            </label>
+          </div>
+          <div class="col-1">
+            <label class="ani-all"><input type="checkbox" id="isMonochrome" class="checkbox ani-all"><span class="non-interactive" data-localize="__MSG_extPrefMono_">Monochrome palettes</span></label>
+          </div>
+          <div class="col-1">
+            <label class="ani-all"><input type="checkbox" id="isRefresh" class="checkbox ani-all" checked><span class="non-interactive" data-localize="__MSG_extPrefRefresh_">Auto refresh</span></label>
+          </div>
+          <div class="col-1">
+            <label><input id="refreshTiming" value="15" class="input" min="3" maxlength="2" spellcheck="false"><span class="non-interactive" data-localize="__MSG_extPrefRefreshTiming_">Refresh delay</span><sub data-localize="__MSG_extPrefRefreshTimingUnit_">seconds</sub></label>
+          </div>
         </div>
 
-
-        <!-- preferences -->
-        <div id="preferences" class="preferences bs-ani-all bs-invisible">
-            <div id="inputs">
-                <div class="bs-row bs-align-left">
-                    <div class="bs-col-1">
-                        <label class="bs-ani-all">
-                            <select id="patternsPalette" class="list">
-                                <option value="random" data-localize="__MSG_extPrefPaletteDefined_" selected>Defined</option>
-                                <option value="generative" data-localize="__MSG_extPrefPaletteGenerative_">Generative</option>
-                            </select>
-                            <span id="patternsPaletteLabelText" class="bs-non-interactive" data-localize="__MSG_extPrefPalette_">Pallete Source</span>
-                        </label>
-                    </div>
-                    <div class="bs-col-1">
-                        <label class="bs-ani-all"><input type="checkbox" id="isMonochrome" class="checkbox bs-ani-all"><span class="bs-non-interactive" data-localize="__MSG_extPrefMono_">Monochrome palettes</span></label>
-                    </div>
-                    <div class="bs-col-1">
-                        <label class="bs-ani-all"><input type="checkbox" id="isRefresh" class="checkbox bs-ani-all" checked><span class="bs-non-interactive" data-localize="__MSG_extPrefRefresh_">Auto refresh</span></label>
-                    </div>
-                    <div class="bs-col-1">
-                        <label><input id="refreshTiming" value="15" class="input" min="3" maxlength="2" spellcheck="false"><span class="bs-non-interactive" data-localize="__MSG_extPrefRefreshTiming_">Refresh delay</span><sub data-localize="__MSG_extPrefRefreshTimingUnit_">seconds</sub></label>
-                    </div>
-                </div>
-
-                <div class="bs-row bs-align-left">
-                    <div class="bs-col-1"></div>
-                    <div class="bs-col-1">
-                        <label class="bs-ani-all"><input type="checkbox" id="isForceWhiteBackground" class="checkbox bs-ani-all" checked><span class="bs-non-interactive" data-localize="__MSG_extPrefWhiteBackground_">White background</span></label>
-                    </div>
-                    <div class="bs-col-2"></div>
-                </div>
-
-                <div class="bs-row bs-align-left">
-                    <div class="bs-col-3">
-                        <input type="text" id="patternsListInput" list="patternsList" class="list bs-ani-all black" maxlength="45" placeholder="create pattern" autocomplete="off">
-                        <datalist id="patternsList" class="bs-ani-all black"></datalist>
-                        <label><span class="bs-non-interactive" data-localize="__MSG_extPrefPatternSchemes_">Manage custom pattern schemes</span><a id="patterns-test" href="http://kenfrederick.de/sandbox/unicode-patterns/" target="_blank"><sub data-localize="__MSG_extPrefPatternTest_">scheme preview</sub></a></label>
-                    </div>
-                    <div class="bs-col-1">
-                        <button id="patterns-add" class="button plus bs-ani-all" data-localize="" alt="add"></button>
-                        <button id="patterns-minus" class="button minus bs-ani-all" data-localize="" alt="remove"></button>
-                    </div>
-                </div>
-
-                <div class="bs-row bs-align-left">
-                    <div class="bs-col-1">
-                        <label class="bs-ani-all">
-                            <select id="patternsTypeface" class="list">
-                                <option value="unscii">8-bit</option>
-                                <!-- <option value="roboto" selected>monospace</option> -->
-                                <option value="evolventa">geometric</option>
-                                <option value="space" selected>monospace</option>
-                                <option value="cutive">typewriter</option>
-                            </select>
-                            <span>
-                                <span id="patternsTypefaceLabelText" class="bs-non-interactive" data-localize="__MSG_extPrefPatternTypeface_">Pattern typeface</span>
-                                <a id="patternsTypefaceInfo" href="https://google.com/" target="_blank" class="material-icons no-underline bs-ani-all">info</a>
-                            </span>
-                        </label>
-                    </div>
-                    <div class="bs-col-1">
-                    </div>
-                </div>
-            </div>
-
-            <div id="close" class="close material-icons bs-ani-all">&#xE5CD;</div>
-        </div>
-        <div id="forms">
-            <input id="color-0" name="0" type="color" value="#ffffff"/>
-            <input id="color-1" name="1" type="color" value="#EA4335"/>
-            <input id="color-2" name="2" type="color" value="#FABB05"/>
-            <input id="color-3" name="3" type="color" value="#4285F4"/>
+        <div class="row align-left">
+          <div class="col-1"></div>
+          <div class="col-1">
+            <label class="ani-all"><input type="checkbox" id="isForceWhiteBackground" class="checkbox ani-all" checked><span class="non-interactive" data-localize="__MSG_extPrefWhiteBackground_">White background</span></label>
+          </div>
+          <div class="col-2"></div>
         </div>
 
+        <div class="row align-left">
+          <div class="col-3">
+            <input type="text" id="patternsListInput" list="patternsList" class="list ani-all black" maxlength="45" placeholder="create pattern" autocomplete="off">
+            <datalist id="patternsList" class="ani-all black"></datalist>
+            <label><span class="non-interactive" data-localize="__MSG_extPrefPatternSchemes_">Manage custom pattern schemes</span><a id="patterns-test" href="http://kenfrederick.de/sandbox/unicode-patterns/" target="_blank"><sub data-localize="__MSG_extPrefPatternTest_">scheme preview</sub></a></label>
+          </div>
+          <div class="col-1">
+            <button id="patterns-add" class="button plus ani-all" data-localize="" alt="add"></button>
+            <button id="patterns-minus" class="button minus ani-all" data-localize="" alt="remove"></button>
+          </div>
+        </div>
 
+        <div class="row align-left">
+          <div class="col-1">
+            <label class="ani-all">
+              <select id="patternsTypeface" class="list">
+                <option value="unscii">8-bit</option>
+                <!-- <option value="roboto" selected>monospace</option> -->
+                <option value="evolventa">geometric</option>
+                <option value="space" selected>monospace</option>
+                <option value="cutive">typewriter</option>
+              </select>
+              <span>
+                <span id="patternsTypefaceLabelText" class="non-interactive" data-localize="__MSG_extPrefPatternTypeface_">Pattern typeface</span>
+                <a id="patternsTypefaceInfo" href="https://google.com/" target="_blank" class="material-icons no-underline ani-all">info</a>
+              </span>
+            </label>
+          </div>
+          <div class="col-1">
+          </div>
+        </div>
+      </div>
 
-        <!-- Libraries -->
-        <script src="./lib/bslib.min.js"></script>
-        <script src="./lib/FPreferences.js"></script>
+      <div id="close" class="close material-icons ani-all">&#xE5CD;</div>
+    </div>
+    <div id="forms">
+      <input id="color-0" name="0" type="color" value="#ffffff"/>
+      <input id="color-1" name="1" type="color" value="#ea4335"/>
+      <input id="color-2" name="2" type="color" value="#fabb05"/>
+      <input id="color-3" name="3" type="color" value="#4285f4"/>
+    </div>
 
-
-        <!-- App -->
-        <script src="./data/patterns.js"></script>
-        <script src="./data/palettes.js"></script>
-
-        <script src="./app/Preferences.js"></script>
-        <script src="./app/localize.js"></script>
-        <script src="./app/UnicodePatterns.js"></script>
-    </body>
+    <script src="./index.min.js"></script>
+  </body>
 </html>

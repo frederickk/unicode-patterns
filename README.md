@@ -1,49 +1,27 @@
 Unicode Patterns
 ==============
 
-Replace new tab page with generated Unicode text patterns
+#### Replace new tab page with generated Unicode text patterns
+
+[Install Extension for Chrome](https://chrome.google.com/webstore/detail/unicode-patterns/kpojnenkeikgfiadhgbbnmdkginfeioa)
+
+[Install AddOn for Firefox](https://addons.mozilla.org/de/firefox/addon/unicode-patterns/)
 
 
 
-Installation
+Build
 -------------
 
-Install via [Chrome Web Store](https://chrome.google.com/webstore/detail/unicode-patterns/kpojnenkeikgfiadhgbbnmdkginfeioa).
+| Command | Description |
+|-|-|
+| `$ npm run dev`   | Spin up Webpack watch task and development server ([0.0.0.0:1112](http://0.0.0.0:1112)) |
+| `$ npm run build` | Compile (and uglify) necessary files into .zip (Chrome) and .zip (Firefox) |
+| `$ npm run build:chrome` | Compile (and uglify) necessary files into .zip only for Chrome |
+| `$ npm run build:firefox` | Compile (and uglify) necessary files into .zip only for Firefox |
 
 
 
-Packaging
+Issues, Bugs, TODOs
 -------------
 
-Package for all platforms (Chrome and Firefox)
-
-```
-$ npm run package
-```
-
-
-*Firefox*
-
-```
-$ npm run package:firefox
-```
-
-[7-Zip](http://www.7-zip.org/) is required when building for Firefox
-
-```
-$ brew install p7zip
-```
-
-
-
-License
--------------
-The MIT License (MIT)
-
-Copyright (c) 2016–2017 Ken Frederick
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+All TODOs, features, and bugs are tracked within [issues](https://github.com/frederickk/unicode-patterns/issues/).

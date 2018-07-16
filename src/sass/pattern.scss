@@ -1,0 +1,30 @@
+.pattern-container {
+  display: flex;
+  flex-flow: row wrap;
+  position: absolute;
+  top: -4vh;
+  transition: opacity $default-timing $default-easing;
+}
+
+.pattern-char {
+  box-sizing: border-box;
+  display: inline-block;
+  flex-basis: 2.222%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  text-align: center;
+  transition: opacity $default-timing $default-easing;
+  // white-space: pre;
+
+  &:nth-child(1n) {
+    color: transparent; // #f00;
+  }
+
+  &:nth-child(2n) {
+    color: transparent; // gold;
+  }
+
+  &:nth-child(3n) {
+    color: transparent; // #00f;
+  }
+}

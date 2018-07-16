@@ -1,16 +1,22 @@
 {
   "name": "unicode-patterns",
-  "version": "0.7.8",
+  "version": "0.8.0",
   "description": "Replace new tab page with generated Unicode text patterns",
   "main": "src/newtab.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frederickk/unicode-patterns"
+  },
   "scripts": {
-    "build": "npm run package && git add --all && git commit -m \"🏗 updated build $npm_package_version\" && npm run version:tag",
-    "package": "./package.sh unicode-patterns",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"NODE_ENV=development node_modules/.bin/webpack --watch\" \"webpack-dev-server --host 0.0.0.0 --port 1112\"",
+    "build": "NODE_ENV=production node_modules/.bin/webpack && npm run package",
+    "build:chrome": "NODE_ENV=production node_modules/.bin/webpack && npm run package:chrome",
+    "build:firefox": "NODE_ENV=production node_modules/.bin/webpack && npm run package:firefox",
+    "package": "./package.sh unicode-patterns all",
     "package:chrome": "./package.sh unicode-patterns chrome",
     "package:firefox": "./package.sh unicode-patterns firefox",
-    "version": "echo \"version $npm_package_version\"",
-    "version:tag": "git tag -a v$npm_package_version -m \"version $npm_package_version\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "push": "git push origin master"
   },
   "keywords": [
     "unicode",
@@ -19,10 +25,26 @@
     "newtab",
     "ascii art"
   ],
-  "author": {
-    "name": "Ken Frederick",
-    "email": "ken.frederick@gmx.de",
-    "url": "https://kenfrederick.de/"
+  "author": "Ken Frederick <ken.frederick@gmx.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^3.6.0",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.9.2",
+    "normalize-url": "^3.2.0",
+    "postcss-loader": "^2.1.6",
+    "sass-loader": "^7.0.3",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "url-loader": "^1.0.1",
+    "webextension-polyfill": "^0.2.1",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
   },
-  "license": "MIT"
+  "dependencies": {
+    "file-loader": "^1.1.11"
+  }
 }

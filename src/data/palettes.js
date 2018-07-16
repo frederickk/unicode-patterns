@@ -1,4 +1,4 @@
-let PALETTES = [
+module.exports = [
   [
     '#ffffff',
     '#ff0000',
