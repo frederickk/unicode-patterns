@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const autoprefixer = require('autoprefixer');
 
 const production = (process.env.NODE_ENV === 'production');
 
@@ -56,11 +57,21 @@ const config = {
           options: {
             minimize: true
           }
-        } : 'css-loader', 'sass-loader']
+        } : 'css-loader', {
+          loader: 'postcss-loader',
+          options: {
+            plugins: () => [autoprefixer()]
+          }
+        }, 'sass-loader']
       }),
     }, {
       test: /\.css$/,
-      use: ['style-loader', 'css-loader', 'postcss-loader']
+      use: ['style-loader', 'css-loader', {
+        loader: 'postcss-loader',
+        options: {
+          plugins: () => [autoprefixer()]
+        }
+      }]
     }, {
       test: /\.(png|otf|woff|woff2|eot|ttf|svg)$/,
       loader: 'url-loader?limit=100000'

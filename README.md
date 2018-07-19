@@ -9,6 +9,10 @@ Unicode Patterns
 
 
 
+![Unicode Patterns Screenshot](./screenshots/unicode-patterns-screen-2.png)
+
+
+
 Build
 -------------
 
@@ -25,3 +29,19 @@ Issues, Bugs, TODOs
 -------------
 
 All TODOs, features, and bugs are tracked within [issues](https://github.com/frederickk/unicode-patterns/issues/).
+
+
+
+License
+-------------
+
+[MIT License](LICENSE)
+
+
+This extension also uses a few typeface/icon assets.
+
+- [Evolvent](https://github.com/evolventa/evolventa) © 2016 by Alex I. Kuznetsov. GPLv2 and LPPL.  
+- [IBM Plex Mono](https://www.ibm.com/plex/) Copyright © 2017 IBM Corp. with Reserved Font Name "Plex"
+- [Material Design Icons](https://google.github.io/material-design-icons/) Copyright Google Inc. Apache License Version 2.0
+- [Space Mono](https://fonts.google.com/specimen/Space+Mono) Copyright 2016 Google Inc. All Rights Reserved.
+- [Unscii](http://pelulamu.net/unscii/) Viznut GPL

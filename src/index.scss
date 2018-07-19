@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Space+Mono|Material+Icons');
-@import url('typefaces/evolventa/evolventa.css');
-@import url('typefaces/unscii/unscii.css');
+@import 'typefaces/evolventa/evolventa';
+@import 'typefaces/ibm_plex_mono/ibm_plex_mono';
+@import 'typefaces/material-icons/material-icons';
+@import 'typefaces/space_mono/space_mono';
+@import 'typefaces/unscii/unscii';
 
 @import 'sass/variables';
 @import 'sass/mixins';
@@ -17,10 +19,7 @@ html {
     font-size: 46px;
   }
 
-  // font-family: 'Anonymous Pro', monospace;
-  // font-family: 'Space Mono', monospace;
-  font-family: 'Roboto Mono', monospace;
-  // font-family: 'Unscii';
+  font-family: 'Space Mono', monospace;
   font-size: 6vh;
   overflow: hidden;
   text-align: center;
@@ -28,17 +27,18 @@ html {
 
 a {
   color: $default-white;
-
-  &.no-underline {
-    text-decoration: none;
-  }
+  transition: color $default-timing $default-easing;
 
   &:hover {
-    color: rgba(0, 0, 0, .65);
+    color: $default-grey-dark;
   }
 
   &:active {
     color: $default-black;
+  }
+
+  &.no-underline {
+    text-decoration: none;
   }
 }
 
@@ -49,43 +49,35 @@ sub {
 }
 
 
-
-.cutive {
-  font-family: 'Cutive Mono';
+.courier {
+  font-family: 'Courier New', 'Courier', monospace;
 }
 
 .evolventa {
-  font-family: 'Evolventa';
+  font-family: 'Evolventa', sans-serif;
   width: 1em;
 }
 
+.plex {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
 .roboto {
-  font-family: 'Roboto Mono';
+  font-family: 'Roboto Mono', monospace;
 }
 
 .space {
-  font-family: 'Space Mono';
+  font-family: 'Space Mono', monospace;
 }
 
 .unscii {
   -webkit-font-smoothing: none;
-  font-family: 'Unscii';
+  font-family: 'Unscii', monospace;
 }
 
 
 .row {
-  box-sizing: border-box;
-  display: flex;
-  flex-basis: auto;
-  flex-flow: row wrap;
-  flex-grow: 0;
-  flex-shrink: 0;
-  // justify-content: space-around;
-  width: 100%;
-
-  &:not(:first-child) {
-    padding-top: 2rem;
-  }
+  @include row;
 }
 
 .col-1 {
@@ -141,7 +133,7 @@ sub {
 }
 
 
-#forms {
+.color-value-container {
   display: none;
 }
 

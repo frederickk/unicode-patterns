@@ -74,7 +74,6 @@ class UnicodePatterns {
    */
   init_() {
     const row = document.createElement('div');
-    row.classList.add('row');
 
     // update pattern
     this.setPattern_(row, this.getRandomPattern_());
@@ -109,7 +108,7 @@ class UnicodePatterns {
    */
   triggerRefresh_() {
     let refresh = window.setTimeout(() => {
-      let isRefresh = this.preferences_.get('isRefresh');
+      const isRefresh = this.preferences_.get('isRefresh');
       if (isRefresh) {
         // console.log(`refreshing every ${this.refreshTiming_} seconds`);
         this.container_.innerHTML = '';
@@ -173,7 +172,7 @@ class UnicodePatterns {
       selector = `.pattern-char:nth-child(${index}n):not(:nth-child(2n)):not(:nth-child(3n))`;
     }
 
-    let chars = document.querySelectorAll(selector);
+    const chars = document.querySelectorAll(selector);
     chars.forEach(element => {
       element.style.color = col.value;
     });
@@ -196,14 +195,16 @@ class UnicodePatterns {
    * @param {[type]} scheme    [description]
    */
   setPattern_(container, scheme) {
-    container.innerHTML = '';
     const patternTypeface = this.getTypeface_();
 
-    let len = scheme.length;
+    container.innerHTML = '';
+    container.classList.add(patternTypeface);
+
+    const len = scheme.length;
     for (let i = 0; i < 45 * 16; i++) {
       let div = document.createElement('div');
       // div.classList.add('pattern-char', 'invisible', 'unscii');
-      div.classList.add('pattern-char', 'invisible', patternTypeface);
+      div.classList.add('pattern-char', 'invisible');
       div.innerHTML = scheme[i % len];
 
       container.appendChild(div);
@@ -218,7 +219,7 @@ class UnicodePatterns {
    * @return {string} CSS class; default 'space'
    */
   getTypeface_() {
-    let typeface = this.preferences_.get('patternsTypeface');
+    const typeface = this.preferences_.get('patternsTypeface');
     if (typeface == null || typeface == undefined || typeface === '') {
       this.preferences_.set('patternsTypeface', 'space');
     }
@@ -242,10 +243,10 @@ class UnicodePatterns {
    * @param  {boolean}  [isMonochrome=false]
    */
   getColorGenerative_(callback, isMonochrome=false) {
-    let hue = parseInt(((new Date().getHours() * new Date().getMinutes() * new Date().getSeconds()) / (24 * 60 * 60)) * 360) + 1;
-    let saturation = 100;
-    let lightness = 50;
-    let mode = 'analogic-complement';
+    const hue = parseInt(((new Date().getHours() * new Date().getMinutes() * new Date().getSeconds()) / (24 * 60 * 60)) * 360) + 1;
+    const saturation = 100;
+    const lightness = 50;
+    const mode = 'analogic-complement';
 
     if (isMonochrome) {
       mode = 'monochrome'; // monochrome-light || monochrome-dark
@@ -271,7 +272,7 @@ class UnicodePatterns {
     let palette = Utils.getRandomProperty(PALETTES);
 
     if (isMonochrome) {
-      let col = palette[parseInt(Math.random() * palette.length)];
+      const col = palette[parseInt(Math.random() * palette.length)];
       palette = Utils.shuffleNodeList([
         Utils.getColorContrast(col),
         Utils.getColorShade(col, 0.33),

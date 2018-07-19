@@ -121,17 +121,17 @@ class Preferences {
   }
 
   /**
-   * Load a given typeface based on CSS class name
+   * Update information link based on selected typeface
    * @param  {string} cls CSS class for a given typeface
    */
   updateTypefaceInfo(cls) {
     let info = document.querySelector('#patternsTypefaceInfo');
 
-    if (cls === 'cutive') {
-      info.href = 'https://fonts.google.com/specimen/Cutive+Mono';
+    if (cls === 'evolventa') {
+      info.href = 'https://evolventa.github.io/';
     }
-    else if (cls === 'product') {
-      info.href = 'https://fonts.google.com/specimen/Producto+Sans';
+    else if (cls === 'plex') {
+      info.href = 'https://fonts.google.com/specimen/IBM+Plex+Mono';
     }
     else if (cls === 'roboto') {
       info.href = 'https://fonts.google.com/specimen/Roboto+Mono';
@@ -229,11 +229,14 @@ class Preferences {
       browser.storage.sync.set({
         'patternTypeface': val
       }).then((items) => {
-        let chars = document.querySelectorAll('.pattern-char');
-        chars.forEach(element => {
-          element.classList = [];
-          element.classList.add('pattern-char', val);
-        });
+        let row = document.querySelector('#pattern-container > div');
+        row.classList = [];
+        row.classList.add(val);
+        // let chars = document.querySelectorAll('.pattern-char');
+        // chars.forEach(element => {
+        //   element.classList = [];
+        //   element.classList.add('pattern-char', val);
+        // });
       });
     });
 

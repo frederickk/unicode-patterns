@@ -1,9 +1,16 @@
 .pattern-container {
+  @include non-interactive;
+
   display: flex;
   flex-flow: row wrap;
   position: absolute;
   top: -4vh;
   transition: opacity $default-timing $default-easing;
+  width: 100%;
+
+  & > div {
+    @include row;
+  }
 }
 
 .pattern-char {

@@ -4,6 +4,7 @@
   left: 0;
   position: absolute;
   top: 0;
+  transition: opacity $default-timing $default-easing;
   width: 100%;
   z-index: 2000;
 
@@ -15,6 +16,7 @@
     position: absolute;
     right: 6px;
     top: 6px;
+    transition: color $default-timing $default-easing;
     width: 48px;
 
     &:hover {
@@ -64,6 +66,7 @@
     // display: grid;
     display: block;
     height: 1rem;
+    transition: opacity $default-timing $default-easing;
     width: 4.859rem; // ridiculous value, but fixes the rag of 'Monochrome Palette' and keeps the (i) on the same line
 
     &:hover {
@@ -92,12 +95,15 @@
     cursor: pointer;
     display: block;
     // display: inline-block;
+    font-family: inherit;
+    font-size: .35rem;
     height: 1rem;
     margin: 0 0 9px;
     outline: none;
     overflow: hidden;
     padding: 0;
     text-align: center;
+    transition: background-color $default-timing $default-easing, background-image $default-timing $default-easing, color $default-timing $default-easing;
     white-space: pre;
   }
 
@@ -164,7 +170,7 @@
     // background-size: .25rem .25rem;
     background-size: 10px 10px;
     border: $default-grey-light 1px solid;
-    font-family: 'Roboto Mono', monospace;
+    font-family: inherit;
     font-size: .35rem;
     // letter-spacing: .6vw;
     margin-bottom: .25rem;
@@ -185,7 +191,7 @@
     }
 
     &::-webkit-input-placeholder {
-      font-family: 'Roboto Mono', monospace;
+      font-family: inherit;
       font-size: .35rem;
       line-height: 1rem;
     }

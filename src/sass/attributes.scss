@@ -9,17 +9,5 @@
 }
 
 .non-interactive {
-  pointer-events: none;
-  user-select: none;
-}
-
-.align-left {
-  background-position: left center;
-  text-align: left;
-}
-
-// TODO(frederickk): This is a bit much. Remove this and be specific about
-// animation properties to animate
-.ani-all {
-  transition: all $default-timing $default-easing;
+  @include non-interactive;
 }
