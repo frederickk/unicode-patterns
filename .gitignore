@@ -8,19 +8,14 @@
 ehthumbs.db
 Thumbs.db
 
-
 # Compiled source #
 ###################
-*.app
-*.crx
+*.min.*
 *.zip
-*.xpi
-
+*.pem
+*.crx
 
 # Folders #
 ###################
-
-
-# Files #
-###################
-unicode-patterns.pem
+node_modules/
+bower_components/

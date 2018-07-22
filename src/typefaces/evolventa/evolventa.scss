@@ -1,0 +1,32 @@
+/*
+ * https://github.com/evolventa/evolventa
+ *
+ *
+ * Copyright © 2016 by Alex I. Kuznetsov.
+ *
+ * These fonts are free software. You are allowed to distribute and/or modify
+ * them under the terms of either (or both) of the following two licenses
+ * (your choice):
+ * 1. GNU General Public License version 2.
+ * 2. The LaTeX Project Public License version 1.3c or (at your option) any
+ * later version.
+ *
+ * Contains work kindly released to the open source community by URW++ Design
+ * and Development GmbH as “URW Gothic L” version 001.005 with the following
+ * copyright notice:
+ *
+ * Copyright URW Software, Copyright 1996 by URW.
+ *
+ */
+
+
+@font-face {
+  font-family: 'Evolventa';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Evolventa'),
+       local('Evolventa-Regular'),
+       url('./typefaces/evolventa/Evolventa-Regular.ttf') format('truetype'),
+       url('./typefaces/evolventa/Evolventa-Regular.otf') format('opentype'),
+       url('./typefaces/evolventa/Evolventa-Regular.woff');
+}

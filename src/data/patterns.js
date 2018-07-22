@@ -1,4 +1,4 @@
-let PATTERNS = {
+module.exports = {
   '0': {
     'scheme' : ('-|'),
   },

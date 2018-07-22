@@ -1,0 +1,13 @@
+.invisible {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.non-interactive {
+  @include non-interactive;
+}

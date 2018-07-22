@@ -1,0 +1,21 @@
+@mixin row {
+  box-sizing: border-box;
+  display: flex;
+  flex-basis: auto;
+  flex-flow: row wrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  // justify-content: space-around;
+  text-align: left;
+  width: 100%;
+
+  &:not(:first-child) {
+    padding-top: 2rem;
+  }
+}
+
+
+@mixin non-interactive {
+  pointer-events: none;
+  user-select: none;
+}
